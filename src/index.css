@@ -6,9 +6,166 @@
     --textsky:#3EA3DC;
     --textfff:#fff;
     --bgred:#EE2F41;
+    --bgef:#EFEFEF
 }
 body{
-    background: #EFEFEF;
+    background: var(--bgef);
+}
+@-webkit-keyframes rectangleOneAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 30px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+
+@keyframes rectangleOneAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 30px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@-webkit-keyframes rectangleTwoAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 40px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@keyframes rectangleTwoAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 40px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@-webkit-keyframes rectangleThreeAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 50px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@keyframes rectangleThreeAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 50px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@-webkit-keyframes rectangleFourAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 40px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@keyframes rectangleFourAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 40px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@-webkit-keyframes rectangleFiveAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 30px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@keyframes rectangleFiveAnim {
+    0% {
+        height: 15px;
+    }
+    40% {
+        height: 30px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+.loaderScreen{
+    gap: 0 3px;
+}
+.loaderScreen div{
+    width: 10px;
+    height: 16px;
+    -webkit-animation: 0.9s ease-in-out infinite;
+    animation: 0.9s ease-in-out infinite;
+    background: #40A6E0;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 0 10px rgba(18, 31, 53, 0.2);
+}
+.loaderScreen div:nth-child(1){
+    -webkit-animation-name: rectangleOneAnim;
+    animation-name: rectangleOneAnim;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.loaderScreen div:nth-child(2){
+    -webkit-animation-name: rectangleTwoAnim;
+    animation-name: rectangleTwoAnim;
+    -webkit-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+    background: var(--bgred);
+}
+.loaderScreen div:nth-child(3){
+    -webkit-animation-name: rectangleThreeAnim;
+    animation-name: rectangleThreeAnim;
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+.loaderScreen div:nth-child(4){
+    -webkit-animation-name: rectangleFourAnim;
+    animation-name: rectangleFourAnim;
+    -webkit-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+    background: var(--bgred);
+}
+.loaderScreen div:nth-child(5){
+    -webkit-animation-name: rectangleFiveAnim;
+    animation-name: rectangleFiveAnim;
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
 }
 img{
     border-style: none;
@@ -36,8 +193,14 @@ img{
 .shadow-auto{
     box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.08);
 }
+.transform50{
+    transform: translate(-50%, -50%);
+}
 .tansitionall{
-    transition: all 0.5s linear;
+    transition: all .4s linear;
+}
+.tansitionall2{
+    transition: all .4s ease-in-out;
 }
 .services_img::before{
     content: "";
@@ -52,6 +215,31 @@ img{
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s linear;
+}
+.grayscale1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    height: 100%;
+    background: #3EA3DC;
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: all 0.3s linear;
+    transform: scale(0) scaleY(0);
+}
+
+.grayscale1:hover::before {
+    opacity: 1;
+    transform: scale(1) scaleY(1);
+}
+.grayscale1:hover h2{
+    opacity: 1;
+    top: 50%;
+    z-index: 10;
 }
 .services_img:hover::before{
     opacity: 1;

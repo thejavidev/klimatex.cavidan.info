@@ -1,13 +1,14 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import { Pagination,Autoplay } from "swiper";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+
 
 const Home = ({ data }) => {
   const banner = data?.homebanner;
@@ -70,10 +71,6 @@ const Home = ({ data }) => {
             <Swiper
               slidesPerView={7}
               spaceBetween={20}
-              centeredSlides
-              centeredSlidesBounds={true}
-              roundLengths={true}
-
               speed={1200}
               breakpoints={{
                 40: {
@@ -124,8 +121,79 @@ const Home = ({ data }) => {
         </Container>
       </section>
 
-      <section id='4' className='pt-[60px] pb-[60px] pl-0 pr-0 relative'>
-          
+      <section id='4' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
+        <Container maxWidth="2xl">
+          <Grid container spacing={0} >
+            <Grid lg={4} xs={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
+              <div className="">
+                <h3 className='text-[--textfff] capitalize text-[30px]'>{t("projects")}</h3>
+              </div>
+              <div className="">
+                <Link to={'/project'}>
+                  <button className='mt-[20px] bg-[--textfff] text-[--textsky] capitalize pl-[20px] pr-[20px] pt-[10px] pb-[10px] rounded-[4px] font-[500]'>{t("loadmore")}</button>
+                </Link>
+              </div>
+            </Grid>
+            {
+              layihe && layihe.slice(0, 5).map((cur, i) => (
+                <Grid xs={4} key={i} className="">
+                  <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
+                    <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
+                    <h2 className='h2 absolute top-0 left-[50%] w-full p-[20px] text-center transform50
+                     text-[--textfff] text-[25px] opacity-0 capitalize tansitionall' >{cur?.name_az}</h2>
+                  </Link>
+                </Grid>
+              ))
+            }
+          </Grid>
+        </Container>
+      </section>
+
+      <section id='5' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative '>
+        <Swiper
+          slidesPerView={7}
+          spaceBetween={20}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          className='bg-[#fff] p-[10px] rounded-[0.625em] mySwiper'
+          breakpoints={{
+            40: {
+              slidesPerView: 2,
+
+            },
+            340: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 2,
+
+            },
+            768: {
+              slidesPerView: 3,
+
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1299: {
+              slidesPerView: 7,
+            },
+          }}
+        > 
+          {
+            brend && brend?.map((cur, i) => (
+              <SwiperSlide key={i}>
+                <div className="flex justify-center items-center  h-[60px]">
+                  <LazyLoadImage src={cur?.src} className='border-2 grayscale-[100%] hover:grayscale-0' />
+                </div>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </section>
     </>
   )
