@@ -1,3 +1,5 @@
+import Layout from "./components/layout/Layout"
+import Router from "./components/router"
 
 
 function App() {
@@ -5,7 +7,9 @@ function App() {
 
   return (
     <>
-      aaa
+      <Layout>
+        <Router />
+      </Layout>
     </>
   )
 }
