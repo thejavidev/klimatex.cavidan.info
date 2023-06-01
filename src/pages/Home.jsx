@@ -20,7 +20,7 @@ const Home = ({ data }) => {
   const tel1 = data?.options?.options?.tel1;
   const str = tel1?.replace(/\s/g, '');
   const bg = data?.options?.pagetopbanner
-  console.log(service)
+
   const [t] = useTranslation("translation")
 
   return (
@@ -136,7 +136,7 @@ const Home = ({ data }) => {
             </Grid>
             {
               layihe && layihe.slice(0, 5).map((cur, i) => (
-                <Grid xs={4} key={i} className="">
+                <Grid xs={4} key={i} className="overflow-hidden">
                   <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                     <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
                     <h2 className='h2 absolute top-0 left-[50%] w-full p-[20px] text-center transform50

@@ -254,3 +254,14 @@ img{
 .services_img:hover .h3{
     color: var(--textfff);
 }
+.header.active{
+    position: fixed;
+    top: 0px;
+    transition: 0.3s linear;
+}
+.nopadding{
+    transition: all .3s ease-in-out;
+    background: var(--textfff);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
