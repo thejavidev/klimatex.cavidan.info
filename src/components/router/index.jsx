@@ -14,13 +14,13 @@ import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
 
 
+const Router = ({data}) => {
+  
 
-
-const Router = () => {
     const mainrouter = [
         {
             path:'/',
-            element:<Home />,
+            element:<Home data={data} />,
             exact : true
         },
         {
