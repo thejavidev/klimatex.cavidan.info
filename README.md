@@ -1,1 +1,0 @@
-# klimatex.cavidan.info
