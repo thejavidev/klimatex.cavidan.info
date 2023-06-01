@@ -3,7 +3,7 @@ import Layout from "./components/layout/Layout"
 import Router from "./components/router"
 import { useCallback, useEffect } from "react";
 import { loadposts } from "./components/store/posts";
-
+import "swiper/css";
 
 function App() {
   const dispatch = useDispatch();
