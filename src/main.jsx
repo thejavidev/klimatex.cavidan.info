@@ -4,6 +4,7 @@ import i18next from 'i18next';
 import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import resources from './components/transitions/index.js';
 import App from './App.jsx'
 import './index.css'
 
