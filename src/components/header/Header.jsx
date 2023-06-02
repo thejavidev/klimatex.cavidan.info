@@ -18,11 +18,11 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state.list)
-  const tel1 = data?.tel1;
+  const tel1 = data?.options?.options?.tel1;
   const str = tel1?.replace(/\s/g, '');
-  const facebook = data?.facebook;
-  const instagram = data?.instagram;
-  const youtube = data?.youtube;
+  const facebook = data?.options?.options?.facebook;
+  const instagram = data?.options?.options?.instagram;
+  const youtube = data?.options?.options?.youtube;
   const [t, i18n] = useTranslation("translation");
   const menu = [
     {

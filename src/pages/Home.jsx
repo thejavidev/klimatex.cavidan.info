@@ -184,7 +184,7 @@ const Home = () => {
                 </div>
               </Col>
               {
-                homeAPI[3]?.data && homeAPI[3]?.data.slice(0, 5).map((cur, i) => (
+                homeAPI[3]?.data && homeAPI[3]?.data.slice(0, 5)?.map((cur, i) => (
                   <Col lg={4} key={i} className="overflow-hidden p-0 m-0" >
                     <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                       <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
