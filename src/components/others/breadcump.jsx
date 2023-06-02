@@ -19,7 +19,7 @@ const Breadcump = () => {
     <>
       <div className="relative w-full breadcump">
         <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
-        <div className="">
+        <div className="" >
           <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("about")}</h2>
         </div>
       </div>

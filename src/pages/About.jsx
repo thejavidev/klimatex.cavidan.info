@@ -16,11 +16,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadposts } from '../components/store/posts';
 import { motion as m } from "framer-motion";
 
+
 const About = () => {
   const [t] = useTranslation("translation")
   const dispatch = useDispatch();
   const data = useSelector((state) => state.list);
-
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -62,12 +62,12 @@ const About = () => {
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
               <Row  >
-                <Col lg={6} className="flex justify-center flex-col">
+                <Col lg={6} className="flex justify-center flex-col" data-aos="fade-right" data-aos-duration="2000">
                   <h2 className='font-[700] text-[40px] text-[--text] mb-[30px] capitalize'>{t("about")}</h2>
                   <div className='columns-2 flex flex-col gap-[40px] text-justify' dangerouslySetInnerHTML={{ __html: about && ml(about?.about_1_text_az, about?.about_1_text_ru, about?.about_1_text_en) }}></div>
 
                 </Col>
-                <Col lg={6}>
+                <Col lg={6} data-aos="fade-left" data-aos-duration="2000">
                   <div className="pl-[20px]">
                     <LazyLoadImage src={about?.about_1_img} className='w-full' />
                   </div>
@@ -79,11 +79,12 @@ const About = () => {
         <section id="2" className='pt-20 bg-[--bgef] pb-[30px]'>
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
-              <h2 className='font-[700] text-[40px] text-[--text] mb-10  capitalize'>{t("shoroom")}</h2>
+              <h2 className='font-[700] text-[40px] text-[--text] mb-10  capitalize' data-aos="fade-right"
+     data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom")}</h2>
               <Row  >
                 {
                   shoromimages && shoromimages?.slice(0, next).map((cur, i) => (
-                    <Col lg={4} key={i} className="p-[10px!important]">
+                    <Col lg={4} key={i} className="p-[10px!important]" data-aos="fade-up" data-aos-duration="2000">
                       <LightgalleryItem group="any" src={cur?.images}>
                         <a >
                           <img src={cur?.images} className='w-[100%!important] h-[380px]' />
@@ -106,8 +107,9 @@ const About = () => {
         <div id="3" className='mt-[10px] pb-[50px] bg-[--textfff]'>
           <Container fluid>
             <div className="pl-[50px] pr-[50px] pt-[40px]">
-              <h2 className='font-[700] text-[40px] text-[--text]  mb-[30px] capitalize'>{t("shoroom360")}</h2>
-              <div className="relative">
+              <h2 className='font-[700] text-[40px] text-[--text]  mb-[30px] capitalize' ata-aos="fade-right"
+     data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom360")}</h2>
+              <div className="relative" data-aos="fade-up" data-aos-duration="2000">
                 <LazyLoadImage src={about?.showroom_360_image} className='w-full h-[500px] ' />
                 <span onClick={handleOpen} className='absolute top-[50%] left-[50%] transform50 cursor-pointer'><PlayArrowIcon sx={{ fontSize: 90 }} className='text-[--textfff]' /></span>
                 <Modal
@@ -127,12 +129,13 @@ const About = () => {
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
               <Row>
-                <Col lg={7} className='p-[20px] flex justify-center flex-col'>
+                <Col lg={7} className='p-[20px] flex justify-center flex-col' data-aos="fade-right" data-aos-duration="2000">
                   <h2 className='text-[40px] font-[700] capitalize mb-[20px]'>{t("production")}</h2>
                   <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_2_text_az, about?.about_2_text_ru, about?.about_2_text_en) }}></div>
                 </Col>
                 <Col lg={5} className='p-[20px]'>
-                  <div className="flex border-2 items-center justify-center z-20 relative image">
+                  <div className="flex border-2 items-center justify-center z-20 relative image" data-aos="zoom-in-up"
+     data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_2_img} className='h-[400px]  w-full ' />
                   </div>
                 </Col>
@@ -145,11 +148,12 @@ const About = () => {
             <div className="pl-[50px] pr-[50px]">
               <Row>
                 <Col lg={5} className='p-[20px]'>
-                  <div className="flex border-2 items-center justify-center z-20 relative image">
+                  <div className="flex border-2 items-center justify-center z-20 relative image" data-aos="zoom-in-up"
+     data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_3_img} className='h-[400px]  w-full ' />
                   </div>
                 </Col>
-                <Col lg={7} className='p-[20px] flex justify-center flex-col pl-[60px]'>
+                <Col lg={7} className='p-[20px] flex justify-center flex-col pl-[60px]' data-aos="fade-left" data-aos-duration="2000">
                   <h2 className='text-[40px] font-[700] capitalize mb-[20px]'>{t("servis")}</h2>
                   <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_3_text_az, about?.about_3_text_ru, about?.about_3_text_en) }}></div>
                 </Col>

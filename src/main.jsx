@@ -10,6 +10,7 @@ import configeStore from './components/store/configureStore.js';
 import { LightgalleryProvider } from "react-lightgallery";
 import App from './App.jsx'
 import './index.css';
+import 'aos/dist/aos.css';
 
 
 const store = configeStore()
