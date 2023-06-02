@@ -11,8 +11,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import $ from 'jquery';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadposts } from '../store/posts';
 
-const Header = ({ data }) => {
+const Header = () => {
+
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.list)
   const tel1 = data?.tel1;
   const str = tel1?.replace(/\s/g, '');
   const facebook = data?.facebook;
@@ -101,6 +106,7 @@ const Header = ({ data }) => {
   };
 
   useEffect(() => {
+    dispatch(loadposts())
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
 
@@ -109,7 +115,7 @@ const Header = ({ data }) => {
         window.removeEventListener('scroll', controlNavbar);
       };
     }
-  }, [lastScrollY]);
+  }, [lastScrollY,dispatch]);
 
   return (
     <>

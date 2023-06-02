@@ -1,13 +1,16 @@
 import React from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
+import { AnimatePresence } from 'framer-motion'
 
-const Layout = ({children,data}) => {
+const Layout = ({ children }) => {
   return (
     <>
-      <Header data={data} />
-        {children}
-      <Footer data={data} />
+      <Header  />
+        <AnimatePresence >
+          {children}
+        </AnimatePresence>
+      <Footer />
     </>
   )
 }

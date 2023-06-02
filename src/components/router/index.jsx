@@ -12,21 +12,21 @@ import License from "../../pages/License"
 import Blog from "../../pages/Blog/Blog"
 import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
-import Breadcump from "../others/breadcump"
 
 
-const Router = ({data}) => {
+
+const Router = () => {
   
 
     const mainrouter = [
         {
             path:'/',
-            element:<Home data={data} />,
+            element:<Home  />,
             exact : true
         },
         {
             path:'/about',
-            element:<About data={data} />
+            element:<About />
         },
         {
             path:'/service',

@@ -8,6 +8,7 @@
     --bgred:#EE2F41;
     --bgef:#EFEFEF;
     --breadcump:#BEBEBE;
+    --footer:#464E55;
 }
 body{
     background: var(--bgef);

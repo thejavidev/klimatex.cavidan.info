@@ -9,7 +9,8 @@ import resources from './components/transitions/index.js';
 import configeStore from './components/store/configureStore.js';
 import { LightgalleryProvider } from "react-lightgallery";
 import App from './App.jsx'
-import './index.css'
+import './index.css';
+
 
 const store = configeStore()
 const defaultLanguage = ["az"]
