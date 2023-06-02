@@ -3,11 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination,Autoplay } from "swiper";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Container } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const Home = ({ data }) => {
@@ -42,21 +43,21 @@ const Home = ({ data }) => {
       </section>
 
       <section id="2" className='pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] pt-[50px]'>
-        <Container maxWidth="2xl" >
-          <Grid container spacing={10} >
-            <Grid xs={6} className="flex justify-center flex-col">
+        <Container fluid >
+          <Row  >
+            <Col lg={6} className="flex justify-center flex-col">
               <h2 className='font-[600] text-[40px] text-[--text] mb-[30px]'>Havalandırma <span className='text-[--textsky]'>sistemləri</span></h2>
               <div className='columns-2 flex flex-col gap-[40px] text-justify' dangerouslySetInnerHTML={{ __html: misiya && misiya?.missiya_text_az }}></div>
               <p className='mt-[40px] flex items-center'>
                 <a href={`tel:${str}`} className='text-[--text] text-[18px]'><LocalPhoneIcon fontSize="large" className='bg-[--textsky] rounded-full text-[--textfff] p-[5px]' /> {options?.tel1} </a>
               </p>
-            </Grid>
-            <Grid xs={6}>
+            </Col>
+            <Col lg={6}>
               <div className="p-[50px]">
                 <LazyLoadImage src={misiya?.missiya_image} className='h-[100%]   w-full shadow-auto' />
               </div>
-            </Grid>
-          </Grid>
+            </Col>
+          </Row>
         </Container>
       </section>
 
@@ -69,7 +70,7 @@ const Home = ({ data }) => {
             <h3 className='text-[--textfff] font-[200] text-[35px]'>{(t("xidmeth3"))}</h3>
           </div>
         </div>
-        <Container maxWidth="2xl">
+        <Container fluid>
           <div className="mt-[-100px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px]">
             <Swiper
               slidesPerView={7}
@@ -125,9 +126,9 @@ const Home = ({ data }) => {
       </section>
 
       <section id='4' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
-        <Container maxWidth="2xl">
-          <Grid container spacing={0} >
-            <Grid lg={4} xs={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
+        <Container fluid>
+          <Row container spacing={0} >
+            <Col lg={4} md={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
               <div className="">
                 <h3 className='text-[--textfff] capitalize text-[30px]'>{t("projects")}</h3>
               </div>
@@ -136,19 +137,19 @@ const Home = ({ data }) => {
                   <button className='mt-[20px] bg-[--textfff] text-[--textsky] capitalize pl-[20px] pr-[20px] pt-[10px] pb-[10px] rounded-[4px] font-[500]'>{t("loadmore")}</button>
                 </Link>
               </div>
-            </Grid>
+            </Col>
             {
               layihe && layihe.slice(0, 5).map((cur, i) => (
-                <Grid xs={4} key={i} className="overflow-hidden">
+                <Col lg={4} key={i} className="overflow-hidden">
                   <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                     <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
                     <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
                      text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{cur?.name_az}</h2>
                   </Link>
-                </Grid>
+                </Col>
               ))
             }
-          </Grid>
+          </Row>
         </Container>
       </section>
 

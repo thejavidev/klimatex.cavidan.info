@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Breadcump from '../components/others/breadcump';
-
 import Grid from '@mui/material/Unstable_Grid2';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
