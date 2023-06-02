@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Breadcump from '../components/others/breadcump';
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -29,7 +29,10 @@ const About = ({ data }) => {
   const handleMoreImage = () => {
     setNext(next + imagePerRow);
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+   
+  }, []);
   const style = {
     position: 'absolute',
     top: '50%',

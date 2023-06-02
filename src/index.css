@@ -10,7 +10,7 @@
     --breadcump:#BEBEBE;
 }
 body{
-    background: var(--textfff);
+    background: var(--bgef);
 }
 @-webkit-keyframes rectangleOneAnim {
     0% {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination,Autoplay } from "swiper";
@@ -22,7 +22,10 @@ const Home = ({ data }) => {
   const bg = data?.options?.pagetopbanner
 
   const [t] = useTranslation("translation")
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+   
+  }, []);
   return (
     <>
       <section id="1">
@@ -139,8 +142,8 @@ const Home = ({ data }) => {
                 <Grid xs={4} key={i} className="overflow-hidden">
                   <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                     <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
-                    <h2 className='h2 absolute top-0 left-[50%] w-full p-[20px] text-center transform50
-                     text-[--textfff] text-[25px] opacity-0 capitalize tansitionall' >{cur?.name_az}</h2>
+                    <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
+                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{cur?.name_az}</h2>
                   </Link>
                 </Grid>
               ))
