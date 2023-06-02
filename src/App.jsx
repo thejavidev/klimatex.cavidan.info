@@ -16,7 +16,7 @@ function App() {
         setTimeout(() => {
           $('.loader1').css('transform', 'translate(0%, 0%) scale(0)')
          
-        }, 1800);
+        }, 2200);
       }
       pageLoading()
   }, [dispatch]), [])

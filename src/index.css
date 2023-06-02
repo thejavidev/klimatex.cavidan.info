@@ -6,7 +6,8 @@
     --textsky:#3EA3DC;
     --textfff:#fff;
     --bgred:#EE2F41;
-    --bgef:#EFEFEF
+    --bgef:#EFEFEF;
+    --breadcump:#BEBEBE;
 }
 body{
     background: var(--bgef);
@@ -264,4 +265,18 @@ img{
     background: var(--textfff);
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+.breadcump::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--breadcump);
+    mix-blend-mode: multiply;
+}
+.transfrom70{
+    transform: translate(-50%, -70%);
 }

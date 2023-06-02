@@ -12,6 +12,7 @@ import License from "../../pages/License"
 import Blog from "../../pages/Blog/Blog"
 import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
+import Breadcump from "../others/breadcump"
 
 
 const Router = ({data}) => {
@@ -25,7 +26,7 @@ const Router = ({data}) => {
         },
         {
             path:'/about',
-            element:<About />
+            element:<About data={data} />
         },
         {
             path:'/service',
@@ -74,7 +75,8 @@ const Router = ({data}) => {
         {
             path:'/contact',
             element:<Contact />
-        }
+        },
+       
     ]
     const route = useRoutes(mainrouter);
     return <>{route}</>

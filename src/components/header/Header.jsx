@@ -66,7 +66,7 @@ const Header = ({ data }) => {
       name: `${t('contact')}`,
     },
   ]
- 
+
   const [open, setOpen] = useState(false);
   const clickHandle = async (lang) => {
     await i18n.changeLanguage(lang);
@@ -82,7 +82,7 @@ const Header = ({ data }) => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = () => {
-    if (typeof window !== 'undefined') { 
+    if (typeof window !== 'undefined') {
       if (window.scrollY > 100) { // if scroll down hide the navbar
         $('.topmenu').addClass('hidden')
         $('.header').removeClass('absolute')
@@ -96,7 +96,7 @@ const Header = ({ data }) => {
       }
 
       // remember current page location to use in the next move
-      setLastScrollY(window.scrollY); 
+      setLastScrollY(window.scrollY);
     }
   };
 
@@ -113,7 +113,7 @@ const Header = ({ data }) => {
 
   return (
     <>
-      <header  className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px]`}>
+      <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px]`}>
         <Container maxWidth="2xl" >
           <div className={`topmenu w-full flex justify-between bg-transparent pt-[20px] pb-[5px] pl-2 pr-2`}>
             <div className="flex items-center">
@@ -159,7 +159,9 @@ const Header = ({ data }) => {
           </div>
           <nav className='flex flex-wrap justify-between w-full pt-[10px] pb-[10px] pl-[10px] pr-[10px] bg-[--textfff]'>
             <div className="flex justify-center items-center  cursor-pointer">
-              <LazyLoadImage src={kl_logo} className='w-[120px]' />
+              <Link to={'/'}>
+                <LazyLoadImage src={kl_logo} className='w-[120px]' />
+              </Link>
             </div>
             <div className="">
               <ul className='flex items-center justify-end w-full'>
