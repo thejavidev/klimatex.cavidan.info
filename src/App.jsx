@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout"
 import Router from "./components/router"
 import { useCallback, useEffect } from "react";
 import { loadposts } from "./components/store/posts";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "swiper/css";
 import $ from 'jquery';
 import Loader from "./components/loader/Loader";
