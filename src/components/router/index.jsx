@@ -16,8 +16,6 @@ import Contact from "../../pages/Contact"
 
 
 const Router = ({data}) => {
-  
-
     const mainrouter = [
         {
             path:'/',
@@ -34,11 +32,11 @@ const Router = ({data}) => {
         },
         {
             path:'/project',
-            element:<Projects />
+            element:<Projects data={data} />
         },
         {
             path:'/project/:slug_az',
-            element:<ProjectsSingle />
+            element:<ProjectsSingle data={data} />
         },
         {
             path:'/project/:slug_az',

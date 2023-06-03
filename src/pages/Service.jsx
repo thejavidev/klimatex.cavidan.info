@@ -16,11 +16,9 @@ const Service = ({ data }) => {
 
 
   const service = data?.service
-
   const { slug_az } = useParams();
   const currentPost = service?.find((post) => post?.slug_az === slug_az);
   const currentitem = currentPost?.products
-  console.log(currentPost)
   const pagebanner = data?.options?.pagetopbanner;
   const [t] = useTranslation("translation")
   useEffect(() => {
@@ -33,7 +31,7 @@ const Service = ({ data }) => {
          initial={{opacity:0}}
          animate={{opacity:1}}
          exit={{opacity:0}}
-         transition={{duration:0.75,ease:"easeOut"}}
+         transition={{duration:1.75,ease:"easeOut"}}
         >
           <div className="relative w-full breadcump">
             <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />

@@ -8,6 +8,7 @@ import Loader from "./components/loader/Loader";
 import AOS from 'aos';
 import { useDispatch, useSelector } from "react-redux";
 import { loadposts } from "./components/store/posts";
+import "lightgallery.js/dist/css/lightgallery.css";
 function App() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.list)

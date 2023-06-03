@@ -4,7 +4,6 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getMultiLang as ml } from '../components/MultiLang';
-import "lightgallery.js/dist/css/lightgallery.css";
 import { LightgalleryItem } from "react-lightgallery";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Modal from '@mui/material/Modal';
@@ -87,7 +86,7 @@ const About = () => {
                     <Col lg={4} key={i} className="p-[10px!important]" data-aos="fade-up" data-aos-duration="2000">
                       <LightgalleryItem group="any" src={cur?.images}>
                         <a >
-                          <img src={cur?.images} className='w-[100%!important] h-[380px]' />
+                          <LazyLoadImage src={cur?.images} className='w-[100%!important] h-[380px]' />
                         </a>
                       </LightgalleryItem>
                     </Col>
