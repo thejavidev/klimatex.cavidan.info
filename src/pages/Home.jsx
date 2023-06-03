@@ -9,14 +9,11 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from "../components/store/posts";
 import { motion as m } from "framer-motion";
 
 
-const Home = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list)
+const Home = ({data}) => {
+ 
 
   const homeAPI = [
     {
@@ -64,8 +61,8 @@ const Home = () => {
   useEffect(() => {
     
     window.scrollTo(0, 0)
-    dispatch(loadposts())
-  }, [dispatch]);
+   
+  }, []);
   return (
     <>
       <m.div

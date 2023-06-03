@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from '../store/posts';
 
-const Breadcump = () => {
 
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-
-  useEffect(() => {
-    dispatch(loadposts())
-  }, [dispatch]);
+const Breadcump = ({data}) => {
 
   const pagebanner = data?.options?.pagetopbanner;
   const [t] = useTranslation("translation")

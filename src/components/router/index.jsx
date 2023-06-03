@@ -15,18 +15,18 @@ import Contact from "../../pages/Contact"
 
 
 
-const Router = () => {
+const Router = ({data}) => {
   
 
     const mainrouter = [
         {
             path:'/',
-            element:<Home  />,
+            element:<Home data={data} />,
             exact : true
         },
         {
             path:'/about',
-            element:<About />
+            element:<About data={data} />
         },
         {
             path:'/service',
