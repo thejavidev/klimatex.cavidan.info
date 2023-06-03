@@ -12,17 +12,21 @@ import Box from '@mui/material/Box';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { loadposts } from '../components/store/posts';
 import { motion as m } from "framer-motion";
 
 
-const About = ({data}) => {
+const About = () => {
   const [t] = useTranslation("translation")
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.list);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const about = data?.options?.about_page;
   const shoromimages = data?.options?.about_page?.showroom_images;
+
   const imagePerRow = 6;
   const [next, setNext] = useState(imagePerRow);
   const handleMoreImage = () => {
@@ -30,8 +34,8 @@ const About = ({data}) => {
   };
   useEffect(() => {
     window.scrollTo(0, 0)
-  
-  }, []);
+    dispatch(loadposts())
+  }, [dispatch]);
   const style = {
     position: 'absolute',
     top: '50%',
@@ -50,7 +54,7 @@ const About = ({data}) => {
      initial={{opacity:0}}
      animate={{opacity:1}}
      exit={{opacity:0}}
-     transition={{duration:1.75,ease:"easeOut"}}
+     transition={{duration:0.75,ease:"easeOut"}}
       >
         <Breadcump data={data}
          />

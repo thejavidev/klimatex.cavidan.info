@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -11,13 +11,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import $ from 'jquery';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from '../store/posts';
+import { Container } from 'react-bootstrap';
 
-const Header = () => {
-
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list)
+const Header = ({data}) => {
   const tel1 = data?.options?.options?.tel1;
   const str = tel1?.replace(/\s/g, '');
   const facebook = data?.options?.options?.facebook;
@@ -37,7 +33,7 @@ const Header = () => {
     },
     {
       id: 3,
-      path: "/service",
+      path: "/service/:slug_az'",
       name: `${t('service')}`,
     },
     {
@@ -83,7 +79,7 @@ const Header = () => {
   const langs = ["az", "ru", "en"];
   const myLang = langs?.filter(langChecker);
 
-  const [show, setShow] = useState(true);
+
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = () => {
@@ -106,7 +102,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    dispatch(loadposts())
+   
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
 
@@ -115,12 +111,12 @@ const Header = () => {
         window.removeEventListener('scroll', controlNavbar);
       };
     }
-  }, [lastScrollY,dispatch]);
+  }, [lastScrollY]);
 
   return (
     <>
       <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px]`}>
-        <Container maxWidth="2xl" >
+        <Container fluid >
           <div className={`topmenu w-full flex justify-between bg-transparent pt-[20px] pb-[5px] pl-2 pr-2`}>
             <div className="flex items-center">
               {<Upper

@@ -8,6 +8,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import resources from './components/transitions/index.js';
 import configeStore from './components/store/configureStore.js';
 import { LightgalleryProvider } from "react-lightgallery";
+import { ChakraProvider } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css';
 import 'aos/dist/aos.css';
@@ -30,7 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <I18nextProvider i18n={i18next}>
         <Provider store={store}>
           <LightgalleryProvider>
-            <App />
+            <ChakraProvider>
+              <App />
+            </ChakraProvider>
           </LightgalleryProvider>
         </Provider>
       </I18nextProvider>

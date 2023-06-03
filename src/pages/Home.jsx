@@ -13,7 +13,7 @@ import { motion as m } from "framer-motion";
 
 
 const Home = ({data}) => {
- 
+
 
   const homeAPI = [
     {
@@ -61,15 +61,18 @@ const Home = ({data}) => {
   useEffect(() => {
     
     window.scrollTo(0, 0)
-   
+
   }, []);
   return (
     <>
+    <div className="bg-[--bgef]"  >
+
+    
       <m.div
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}
-        transition={{duration:1.75,ease:"easeOut"}}
+        transition={{duration:0.75,ease:"easeOut"}}
       >
         <section id="1">
           <Swiper pagination={true} modules={[Pagination]} className="banner">
@@ -84,11 +87,11 @@ const Home = ({data}) => {
           </Swiper>
         </section>
 
-        <section id="2" className='pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] pt-[50px]'>
+       <section id="2" className='pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] pt-[50px]'>
           <Container fluid >
             <Row  >
-              <Col lg={6} className="flex justify-center flex-col" >
-                <h2 className='font-[600] text-[40px] text-[--text] mb-[30px]' data-aos="fade-right" data-aos-duration="2000">Havalandırma <span className='text-[--textsky]'>sistemləri</span></h2>
+              <Col lg={6} className="flex justify-center flex-col"  >
+                <h2 className='font-[600] text-[40px] text-[--text] mb-[30px]' >Havalandırma <span className='text-[--textsky]'>sistemləri</span></h2>
                 <div className='columns-2 flex flex-col gap-[40px] text-justify' data-aos="fade-right" data-aos-duration="2000" dangerouslySetInnerHTML={{ __html: homeAPI[1]?.data && homeAPI[1]?.data?.missiya_text_az }}></div>
                 <p className='mt-[40px] flex items-center'>
                   <a href={`tel:${str}`} className='text-[--text] text-[18px]' data-aos="fade-right" data-aos-duration="2000"><LocalPhoneIcon fontSize="large" className='bg-[--textsky] rounded-full text-[--textfff] p-[5px]' /> {phone} </a>
@@ -240,8 +243,9 @@ const Home = ({data}) => {
               ))
             }
           </Swiper>
-        </section>
+        </section> 
       </m.div>
+      </div>
     </>
   )
 }

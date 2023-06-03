@@ -29,8 +29,8 @@ const Router = ({data}) => {
             element:<About data={data} />
         },
         {
-            path:'/service',
-            element:<Service />
+            path:'/service/:slug_az',
+            element:<Service data={data} />
         },
         {
             path:'/project',

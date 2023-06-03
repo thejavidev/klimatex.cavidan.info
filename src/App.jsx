@@ -11,6 +11,7 @@ import { loadposts } from "./components/store/posts";
 function App() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.list)
+
   AOS.init({ once: true, });
   useEffect(useCallback(() => {
     dispatch(loadposts())
@@ -25,7 +26,7 @@ function App() {
   return (
     <>
       <Loader />
-      <Layout >
+      <Layout data={data} >
         <Router data={data} />
       </Layout>
     </>
