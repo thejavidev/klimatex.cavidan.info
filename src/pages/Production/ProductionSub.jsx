@@ -7,14 +7,28 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link, useParams } from 'react-router-dom';
 import ProductCard from './ProductCard';
+import { useState } from 'react';
 
 const ProductionSub = ({ data }) => {
   const [t] = useTranslation("translation");
   const pagebanner = data?.options?.pagetopbanner;
+  const [isOpened, setIsOpened] = useState(false);
   const { slug_az } = useParams();
   const production = data?.istehsalat;
   const currentPost = production?.find((post) => post?.slug_az === slug_az);
   const currentItem = currentPost?.sub_categories;
+
+  function toogle1() {
+    setIsOpened(wasOpened => !wasOpened);
+    let openProjects = document.querySelectorAll('.allProjects');
+    let bagliall = document.querySelectorAll('.bagliall');
+    [].forEach.call(bagliall, function (el) {
+      el.classList.remove("bagli");
+    });
+    [].forEach.call(openProjects, function (el) {
+      el.classList.add("hidden");
+    });
+  }
 
   return (
     <>
@@ -35,13 +49,12 @@ const ProductionSub = ({ data }) => {
             <Row>
               {
                 currentItem && currentItem?.map((cur, i) => (
-                  <Col key={i} xl={2} lg={3} md={4} sm={6} xs={12}>
-                    <Link to={`${cur?.slug_az}`}>
-                      <ProductCard image={cur?.src} text={ml(cur?.name_az, cur?.name_ru, cur?.name_en)} />
-                    </Link>
+                  <Col key={i} xl={2} lg={3} md={4} sm={6} xs={12} className='allProjects' onClick={toogle1}>
+                    <ProductCard image={cur?.src} text={ml(cur?.name_az, cur?.name_ru, cur?.name_en)} />
                   </Col>
                 ))
               }
+             
             </Row>
           </Container>
         </section>

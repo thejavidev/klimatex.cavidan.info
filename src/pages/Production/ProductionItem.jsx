@@ -16,9 +16,12 @@ const ProductionItem = ({ data }) => {
   const pagebanner = data?.options?.pagetopbanner;
 
   const { slug_az } = useParams();
-
+  const production = data?.istehsalat;
+  const currentPost = production?.find((post) => post?.slug_az === slug_az);
   useEffect(()=>{
     console.log('slug=>',slug_az)
+    console.log('production=>',production?.[1]?.sub_categories)
+    console.log('currentPost=>',currentPost)
   },[])
 
   return (

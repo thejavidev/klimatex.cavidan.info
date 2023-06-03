@@ -34,7 +34,7 @@ const Production = ({ data }) => {
               {
                 production && production?.map((cur, i) => (
                   <Col key={i} xl={2} lg={3} md={4} sm={6} xs={12}>
-                    <Link to={`/production/${cur?.slug_az}`}>
+                    <Link to={`${cur?.slug_az}`}>
                       <div className="flex justify-center flex-col h-full w-full cursor-pointer productionimg">
                         <div className="top">
                           <LazyLoadImage src={cur?.src} className='w-full tansitionall2' />

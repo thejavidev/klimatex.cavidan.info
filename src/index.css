@@ -336,3 +336,6 @@ img{
 .productionimg:hover .h2 h2{
     color: var(--textfff);
 }
+.bagli{
+    display: none;
+}
