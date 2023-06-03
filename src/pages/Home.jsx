@@ -49,8 +49,6 @@ const Home = ({data}) => {
       data: data?.options?.pagetopbanner
     },
   ]
-
-
   const phone = homeAPI[6]?.data;
   const str = phone?.replace(/\s/g, '')
 
@@ -59,9 +57,7 @@ const Home = ({data}) => {
 
   const [t] = useTranslation("translation")
   useEffect(() => {
-    
     window.scrollTo(0, 0)
-
   }, []);
   return (
     <>

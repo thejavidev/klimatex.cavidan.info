@@ -24,18 +24,16 @@ const Service = ({ data }) => {
   const pagebanner = data?.options?.pagetopbanner;
   const [t] = useTranslation("translation")
   useEffect(() => {
-
     window.scrollTo(0, 0)
-
   }, []);
   return (
     <>
       <div className="bg-[--bgef] min-h-[100vh]">
         <m.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.75, ease: "easeOut" }}
+         initial={{opacity:0}}
+         animate={{opacity:1}}
+         exit={{opacity:0}}
+         transition={{duration:0.75,ease:"easeOut"}}
         >
           <div className="relative w-full breadcump">
             <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
@@ -108,13 +106,13 @@ const Service = ({ data }) => {
                         currentitem && currentitem?.map((cur, i) => (
                           <SwiperSlide key={i} className='w-[100%!important]'>
                             <Row className='items-center'>
-                              <Col lg={6} md={12}>
+                              <Col lg={6} md={12} data-aos="fade-right" >
                                 <div className="">
                                   <h2 className='font-[600] text-[40px] mb-[40px]'>{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
                                   <div dangerouslySetInnerHTML={{ __html: cur && ml(cur?.text_az, cur?.text_ru, cur?.text_en) }}></div>
                                 </div>
                               </Col>
-                              <Col lg={6} md={12}>
+                              <Col lg={6} md={12} data-aos="fade-left" data-aos-duration="2000">
                                 <LazyLoadImage src={cur?.src} className='h-[450px]' />
                               </Col>
                             </Row>

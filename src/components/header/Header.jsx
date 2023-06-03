@@ -33,7 +33,7 @@ const Header = ({data}) => {
     },
     {
       id: 3,
-      path: "/service/:slug_az'",
+      path: "/service/layihelendirme",
       name: `${t('service')}`,
     },
     {

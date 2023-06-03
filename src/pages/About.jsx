@@ -125,7 +125,7 @@ const About = () => {
           </Container>
         </div>
 
-        <section id="4" className=' bg-[--bgef] mt-2 pt-[40px] pb-[40px]'>
+        <section id="4" className=' bg-[--bgef]  pt-[40px] pb-[40px]'>
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
               <Row>
@@ -143,18 +143,18 @@ const About = () => {
             </div>
           </Container>
         </section>
-        <section id="5" className=' bg-[--textfff] mt-2 pt-[40px] pb-[40px]'>
+        <section id="5" className=' bg-[--textfff]  '>
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
-              <Row>
-                <Col lg={5} className='p-[20px]'>
-                  <div className="flex border-2 items-center justify-center z-20 relative image" data-aos="zoom-in-up"
+              <Row className='pt-[50px] pb-[50px]'>
+                <Col lg={5} className=''>
+                  <div className="flex  items-center justify-center z-20 relative image" data-aos="zoom-in-up"
      data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_3_img} className='h-[400px]  w-full ' />
                   </div>
                 </Col>
-                <Col lg={7} className='p-[20px] flex justify-center flex-col pl-[60px]' data-aos="fade-left" data-aos-duration="2000">
-                  <h2 className='text-[40px] font-[700] capitalize mb-[20px]'>{t("servis")}</h2>
+                <Col lg={7} className=' flex justify-center flex-col pl-[40px]' data-aos="fade-left" data-aos-duration="2000">
+                  <h2 className='text-[40px] font-[700] capitalize '>{t("servis")}</h2>
                   <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_3_text_az, about?.about_3_text_ru, about?.about_3_text_en) }}></div>
                 </Col>
               </Row>
