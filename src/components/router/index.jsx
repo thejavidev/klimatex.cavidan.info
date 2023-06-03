@@ -39,20 +39,16 @@ const Router = ({data}) => {
             element:<ProjectsSingle data={data} />
         },
         {
-            path:'/project/:slug_az',
-            element:<ProjectsSingle />
-        },
-        {
             path:'/production',
-            element:<Production />
+            element:<Production data={data} />
         },
         {
             path:'/production/:slug_az',
-            element:<ProductionSub />
+            element:<ProductionSub data={data}  />
         },
         {
             path:'/production/:slug_az/:slug_az',
-            element:<ProductionItem />
+            element:<ProductionItem data={data} />
         },
         {
             path:'/distributor',
