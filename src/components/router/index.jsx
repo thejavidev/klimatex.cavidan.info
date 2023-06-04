@@ -6,7 +6,6 @@ import Projects from "../../pages/Project/Projects"
 import ProjectsSingle from "../../pages/Project/ProjectsSingle"
 import Production from "../../pages/Production/Production"
 import ProductionSub from "../../pages/Production/ProductionSub"
-import ProductionItem from "../../pages/Production/ProductionItem"
 import Distributor from "../../pages/Distributor"
 import License from "../../pages/License"
 import Blog from "../../pages/Blog/Blog"
@@ -46,13 +45,9 @@ const Router = ({data}) => {
             path:'/production/:slug_az',
             element:<ProductionSub data={data}  />
         },
-        // {
-        //     path:'/production/:slug_az/:istehsalat_category_id',
-        //     element:<ProductionItem data={data} />
-        // },
         {
-            path:'/distributor',
-            element:<Distributor />
+            path:'/distributor/:id',
+            element:<Distributor data={data} />
         },
         {
             path:'/license',

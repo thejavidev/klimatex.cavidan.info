@@ -20,7 +20,7 @@ const Production = ({ data }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1.75, ease: "easeOut" }}
+        transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
@@ -29,11 +29,11 @@ const Production = ({ data }) => {
           </div>
         </div>
         <section id="1" className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
-          <Container fluid>
+          <Container fluid >
             <Row>
               {
-                production && production?.map((cur, i) => (
-                  <Col key={i} xl={2} lg={3} md={4} sm={6} xs={12}>
+                production && production?.map((cur, index) => (
+                  <Col key={index} xl={2} lg={3} md={4} sm={6} xs={12} data-aos="fade-up" data-aos-duration="2000" data-aos-offset={(280 * index) / 5}>
                     <Link to={`${cur?.slug_az}`}>
                       <div className="flex justify-center flex-col h-full w-full cursor-pointer productionimg">
                         <div className="top">

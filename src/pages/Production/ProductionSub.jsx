@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link, useParams } from 'react-router-dom';
-
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 const ProductionSub = ({ data }) => {
@@ -26,7 +25,7 @@ const ProductionSub = ({ data }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1.75, ease: "easeOut" }}
+        transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
@@ -34,11 +33,11 @@ const ProductionSub = ({ data }) => {
             <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("production")}</h2>
           </div>
         </div>
-        <section id="1" className='pt-[60px] bg-[--bgef] min-h-[100vh] pb-[60px]  relative'>
-          <Container fluid>
+        <section id="1" className='pt-[60px] bg-[--bgef] min-h-[50vh] pb-[60px]  relative'>
+          <Container fluid >
             <Row>
-              <Tabs>
-                <TabList className='border-undisplay pl-[50px] pr-[50px] bg-[#ffff] w-max'>
+              <Tabs >
+                <TabList className='border-undisplay ml-[80px] mr-[80px] bg-[#ffff] w-max ' >
 
                   {
                     currentItem && currentItem?.map((cur, i) => (
@@ -91,12 +90,12 @@ const ProductionSub = ({ data }) => {
                           </Col>
                           <Col lg={12} className='bg-[--bgef] mt-[2rem] pt-[30px] pb-[30px] pl-[50px] pr-[50px]'>
                             <Row className='items-start justify-start'>
-                              <Col lg={4} className='p-0 m-0'>
+                              <Col lg={4} >
                                 <div className="flex items-start justify-start">
                                   <LazyLoadImage src={cur?.image_2} className='w-full h-[500px] object-contain  p-0 m-0' />
                                 </div>
                               </Col>
-                              <Col lg={4} className='p-0 m-0'>
+                              <Col lg={4} >
                                 <div className="flex items-center justify-center">
                                   <LazyLoadImage src={cur?.image_3} className='w-full h-[500px] object-contain ' />
                                 </div>
@@ -161,13 +160,13 @@ const ProductionSub = ({ data }) => {
                           <Col lg={12} className='bg-[--textfff] mt-[2rem] pt-[30px] pb-[30px] pl-[50px] pr-[50px]'>
                             <div className="flex flex-col justify-start items-start">
                                 <h2 className='font-[400] text-[25px] pb-[50px]'>{ml(cur?.iki_qanadli_barmaqliq_az,cur?.iki_qanadli_barmaqliq_ru,cur?.iki_qanadli_barmaqliq_en)}</h2>
-                                <LazyLoadImage src={cur?.image_4} className=' w-auto ' />
+                                <LazyLoadImage src={cur?.image_4} className=' w-[800px] ' />
                             </div>
                           </Col>
                           <Col lg={12} className='bg-[--bgef] mt-[2rem] pt-[30px] pb-[30px] pl-[50px] pr-[50px]'>
                             <div className="flex flex-col">
                                 <h2 className='font-[400] text-[25px] pb-[50px]'>{ml(cur?.barmaqliq_secimi_cedveli_az,cur?.barmaqliq_secimi_cedveli_ru,cur?.barmaqliq_secimi_cedveli_en)}</h2>
-                                <LazyLoadImage src={cur?.image_5} className='w-auto' />
+                                <LazyLoadImage src={cur?.image_5} className='w-[1400px]' />
                             </div>
                           </Col>
                         </Row>
