@@ -48,7 +48,7 @@ const ProductionItem = ({ data }) => {
                   <TabList className='flex items-center justify-center  bg-[--textfff]'>
                     {
                       currentItem && currentItem?.map((cur, i) => (
-                        <Tab _selected={{ color: 'white', bg: 'blue.500' }} >{cur?.name_az}</Tab>
+                        <Tab _selected={{ color: 'white', bg: 'blue.500' }} key={i}>{cur?.name_az}</Tab>
                       ))
                     }
                   </TabList>

@@ -46,10 +46,10 @@ const Router = ({data}) => {
             path:'/production/:slug_az',
             element:<ProductionSub data={data}  />
         },
-        {
-            path:'/production/:slug_az/:istehsalat_category_id',
-            element:<ProductionItem data={data} />
-        },
+        // {
+        //     path:'/production/:slug_az/:istehsalat_category_id',
+        //     element:<ProductionItem data={data} />
+        // },
         {
             path:'/distributor',
             element:<Distributor />
