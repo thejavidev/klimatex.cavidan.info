@@ -47,7 +47,7 @@ const Router = ({data}) => {
             element:<ProductionSub data={data}  />
         },
         {
-            path:'/production/:slug_az/:slug_az',
+            path:'/production/:slug_az/:istehsalat_category_id',
             element:<ProductionItem data={data} />
         },
         {
