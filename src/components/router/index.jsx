@@ -46,7 +46,7 @@ const Router = ({data}) => {
             element:<ProductionSub data={data}  />
         },
         {
-            path:'/distributor/:id',
+            path:'/distributor/:id/:slug_az',
             element:<Distributor data={data} />
         },
         {

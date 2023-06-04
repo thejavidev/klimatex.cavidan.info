@@ -45,7 +45,7 @@ const Distributor = ({ data }) => {
               {
                 distribution && distribution?.map((cur, i) => (
                   <Col lg={2} key={i} className="  ">
-                    <NavLink to={`/distributor/${cur?.id}`} className='bg-[--textfff] distribution w-full flex justify-center mb-[20px] pt-[10px] pb-[10px]'>
+                    <NavLink to={`/distributor/${cur?.id}/${currentItem?.slug_az}`} className='bg-[--textfff] distribution w-full flex justify-center mb-[20px] pt-[10px] pb-[10px]'>
                       <LazyLoadImage src={cur?.src} className=' h-[30px]' />
                     </NavLink>
                   </Col>
@@ -55,7 +55,7 @@ const Distributor = ({ data }) => {
                 {
                   currentItem && currentItem?.map((cur, i) => (
                     <div className='' key={i} >
-                      <NavLink className='bg-[--textfff]'>
+                      <NavLink className='bg-[--textfff]' to={`/distributor/:id/${cur?.slug_az}`}>
                         <h2 className=''>{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
                       </NavLink>
                     </div>
