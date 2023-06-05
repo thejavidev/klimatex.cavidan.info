@@ -5,6 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Link, NavLink, useParams } from 'react-router-dom';
 import { getMultiLang as ml } from '../components/MultiLang';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
@@ -23,7 +24,7 @@ const Distributor = ({ data }) => {
   const currentPost2 = currentItem?.find((post) => post?.distribusiya_two_id == distribusiya_one_id);
   const currentItem2 = currentPost2?.products;
 
- 
+
 
   return (
     <>
@@ -46,7 +47,7 @@ const Distributor = ({ data }) => {
                 distribution && distribution?.map((cur, i) => (
                   <Col lg={2} key={i} className="  ">
                     <NavLink to={`/distributor/${cur?.id}/${currentItem?.slug_az}`} className='bg-[--textfff] distribution w-full flex justify-center mb-[20px] pt-[10px] pb-[10px]'>
-                      <LazyLoadImage  src={cur?.src} className='h-[30px]' />
+                      <LazyLoadImage src={cur?.src} className='h-[30px]' />
                     </NavLink>
                   </Col>
                 ))
@@ -62,8 +63,10 @@ const Distributor = ({ data }) => {
                   ))
                 }
                 <Tabs>
+
                   {
                     currentItem2 && currentItem2?.map((cur, i) => (
+
                       <TabList key={i} className='tab2n flex overflow-hidden flex-wrap pt-[60px] pb-[60px] pl-[100px] pr-[100px]'>
                         <Tab>
                           <Col lg={8}>
