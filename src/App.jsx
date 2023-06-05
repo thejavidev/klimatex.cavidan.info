@@ -19,7 +19,7 @@ function App() {
     function pageLoading() {
       setTimeout(() => {
         $('.loader1').css('visibility', 'hidden')
-      }, 1800);
+      }, 2500);
     }
     pageLoading()
   }, [dispatch]), [])
