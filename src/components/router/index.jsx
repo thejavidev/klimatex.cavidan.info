@@ -11,8 +11,8 @@ import License from "../../pages/License"
 import Blog from "../../pages/Blog/Blog"
 import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
-import DistributorItem from "../../pages/DistributorItem"
-import DistributorSingle from "../../pages/DistributorSingle"
+// import DistributorItem from "../../pages/DistributorItem"
+// import DistributorSingle from "../../pages/DistributorSingle"
 
 
 
@@ -48,17 +48,17 @@ const Router = ({data}) => {
             element:<ProductionSub data={data}  />
         },
         {
-            path:'/distributor',
+            path:'/distributor/:id/:slug_az',
             element:<Distributor data={data} />
         },
-        {
-            path:'/distributor/:id',
-            element:<DistributorItem data={data} />
-        },
-        {
-            path:'/distributor/:id/:id',
-            element:<DistributorSingle data={data} />
-        },
+        // {
+        //     path:'/distributor/:id',
+        //     element:<DistributorItem data={data} />
+        // },
+        // {
+        //     path:'/distributor/:id/:id',
+        //     element:<DistributorSingle data={data} />
+        // },
         {
             path:'/license',
             element:<License />

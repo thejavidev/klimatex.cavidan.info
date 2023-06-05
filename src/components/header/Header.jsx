@@ -48,7 +48,7 @@ const Header = ({data}) => {
     },
     {
       id: 6,
-      path: "/distributor",
+      path: "/distributor/:id/:slug_az",
       name: `${t('distribution')}`,
     },
     {
