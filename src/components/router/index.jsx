@@ -11,7 +11,7 @@ import License from "../../pages/License"
 import Blog from "../../pages/Blog/Blog"
 import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
-// import DistributorSingle from "../../pages/Distributor/DistributorSingle"
+import DistributorSingle from "../../pages/Distributor/DistributorSingle"
 // import DistributorItem from "../../pages/DistributorItem"
 // import DistributorSingle from "../../pages/DistributorSingle"
 
@@ -52,10 +52,10 @@ const Router = ({data}) => {
             path:'/distributor/:id',
             element:<Distributor data={data} />
         },
-        // {
-        //     path:'/distributor/:id',
-        //     element:<DistributorSingle data={data} />
-        // },
+        {
+            path:'/distributor/:id/:id',
+            element:<DistributorSingle data={data} />
+        },
         {
             path:'/license',
             element:<License data={data} />

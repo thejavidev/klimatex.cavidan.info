@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import { getMultiLang as ml } from '../../components/MultiLang';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
@@ -25,9 +25,6 @@ const Distributor = ({ data }) => {
   const currentPost2 = subcategories?.find((post) => post?.distribusiya_one_id == id);
   const currentProducts = currentPost2?.products;
 
-  // console.log(id)
-  // console.log(currentPost?.sub_categories)
-  console.log(currentPost2?.products)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -63,28 +60,11 @@ const Distributor = ({ data }) => {
                 ))
               }
               <div>
-                <Tabs variant="unstyled">
-                  <TabList>
-
-                    {
-                      subcategories && subcategories?.map((cur, i) => (
-                        <Tab key={i} _selected={{ color: 'white', bg: 'blue.500' }}> {ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</Tab>
-                      ))
-                    }
-                  </TabList>
-
-                  {
-                    currentProducts && currentProducts?.map((cur, i) => (
-                      <TabPanels key={i}>
-                        <TabPanel>
-                          <h2>{cur?.title_az}</h2>
-                        </TabPanel>
-                        
-                      </TabPanels>
-                    ))
-                  }
-
-                </Tabs>
+                {
+                  subcategories && subcategories?.map((cur, i) => (
+                    <Link to={`${cur?.id}`} key={i}> {ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</Link>
+                  ))
+                }
               </div>
             </Row>
           </Container>

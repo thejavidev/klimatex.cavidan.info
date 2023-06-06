@@ -7,20 +7,28 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { NavLink, useParams } from 'react-router-dom';
 import { useOutletContext } from "react-router-dom";
+import { useState } from 'react';
 
 const DistributorSingle = ({ data }) => {
     const [t] = useTranslation("translation");
-    const { id } = useParams()
+    const { id } = useParams();
+    
     const pagebanner = data?.options?.pagetopbanner;
-    const distributions = data?.distrubition;
+    const distribution = data?.distrubition;
 
-    const currentPost = distributions?.find((post) => post?.distribusiya_one_id === id);
-    // console.log(id)
-    // console.log(currentPost?.sub_categories)
+    const currentPost = distribution?.find((post) => post?.id == id);
+    const subcategories = currentPost?.sub_categories;
+ 
+    const currentPost2 = subcategories?.find((post) => post?.distribusiya_one_id == id);
+    const id2=currentPost2?.id;
+    const currentPost2Product =currentPost2?.products;
+    const currentPost3 = currentPost2Product?.find((post) => post?.distribusiya_two_id == id2);
 
+    console.log(id)
+    console.log(id2)
+    console.log(currentPost2Product)
     useEffect(() => {
         window.scrollTo(0, 0)
-      
     }, []);
     return (
         <>
@@ -37,7 +45,14 @@ const DistributorSingle = ({ data }) => {
                     </div>
                 </div>
                 <section className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
+                    {currentPost2Product && currentPost2Product?.map((cur,i)=>(
+                        <div key={i}>
+                                {
+                                    cur?.title_az
+                                }
 
+                        </div>
+                    ))}
                 </section>
 
 
