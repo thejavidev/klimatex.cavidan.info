@@ -6,8 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getMultiLang as ml } from '../components/MultiLang';
 import { LightgalleryItem } from "react-lightgallery";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
+import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -21,8 +20,7 @@ const About = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.list);
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [modalShow, setModalShow] = useState(false);
   const about = data?.options?.about_page;
   const shoromimages = data?.options?.about_page?.showroom_images;
 
@@ -35,28 +33,18 @@ const About = () => {
     window.scrollTo(0, 0)
     dispatch(loadposts())
   }, [dispatch]);
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 800,
-    bgcolor: 'background.paper',
-    border: '0px solid transparent',
-    boxShadow: 0,
-    p: 1,
-  };
+
 
   return (
     <>
       <m.div
-     initial={{opacity:0}}
-     animate={{opacity:1}}
-     exit={{opacity:0}}
-     transition={{duration:0.75,ease:"easeOut"}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
       >
         <Breadcump data={data}
-         />
+        />
         <section id="1" className=' bg-[--textfff] '>
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
@@ -79,7 +67,7 @@ const About = () => {
           <Container fluid>
             <div className="pl-[50px] pr-[50px]">
               <h2 className='font-[700] text-[40px] text-[--text] mb-10  capitalize' data-aos="fade-right"
-     data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom")}</h2>
+                data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom")}</h2>
               <Row  >
                 {
                   shoromimages && shoromimages?.slice(0, next).map((cur, i) => (
@@ -107,17 +95,20 @@ const About = () => {
           <Container fluid>
             <div className="pl-[50px] pr-[50px] pt-[40px]">
               <h2 className='font-[700] text-[40px] text-[--text]  mb-[30px] capitalize' ata-aos="fade-right"
-     data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom360")}</h2>
+                data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom360")}</h2>
               <div className="relative" data-aos="fade-up" data-aos-duration="2000">
                 <LazyLoadImage src={about?.showroom_360_image} className='w-full h-[500px] ' />
-                <span onClick={handleOpen} className='absolute top-[50%] left-[50%] transform50 cursor-pointer'><PlayArrowIcon sx={{ fontSize: 90 }} className='text-[--textfff]' /></span>
+                <span onClick={() => setModalShow(true)} className='absolute top-[50%] left-[50%] transform50 cursor-pointer'><PlayArrowIcon sx={{ fontSize: 90 }} className='text-[--textfff]' /></span>
                 <Modal
-                  open={open}
-                  onClose={handleClose}
+                  size="lg"
+                  centered
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
                 >
-                  <Box sx={style}>
+                  <Modal.Body>
                     <iframe width="100%" height="415" src={about?.showroom_360_video_link} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  </Box>
+                  </Modal.Body>
+
                 </Modal>
               </div>
             </div>
@@ -134,7 +125,7 @@ const About = () => {
                 </Col>
                 <Col lg={5} className='p-[20px]'>
                   <div className="flex border-2 items-center justify-center z-20 relative image" data-aos="zoom-in-up"
-     data-aos-anchor-placement="top-center" data-aos-duration="2000">
+                    data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_2_img} className='h-[400px]  w-full ' />
                   </div>
                 </Col>
@@ -148,7 +139,7 @@ const About = () => {
               <Row className='pt-[50px] pb-[50px]'>
                 <Col lg={5} className=''>
                   <div className="flex  items-center justify-center z-20 relative image" data-aos="zoom-in-up"
-     data-aos-anchor-placement="top-center" data-aos-duration="2000">
+                    data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_3_img} className='h-[400px]  w-full ' />
                   </div>
                 </Col>

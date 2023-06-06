@@ -7,13 +7,16 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 const Production = ({ data }) => {
   const [t] = useTranslation("translation");
   const pagebanner = data?.options?.pagetopbanner;
   const production = data?.istehsalat
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
   return (
     <>
       <m.div

@@ -6,11 +6,12 @@ import Projects from "../../pages/Project/Projects"
 import ProjectsSingle from "../../pages/Project/ProjectsSingle"
 import Production from "../../pages/Production/Production"
 import ProductionSub from "../../pages/Production/ProductionSub"
-import Distributor from "../../pages/Distributor"
+import Distributor from "../../pages/Distributor/Distributor"
 import License from "../../pages/License"
 import Blog from "../../pages/Blog/Blog"
 import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
+// import DistributorSingle from "../../pages/Distributor/DistributorSingle"
 // import DistributorItem from "../../pages/DistributorItem"
 // import DistributorSingle from "../../pages/DistributorSingle"
 
@@ -48,15 +49,11 @@ const Router = ({data}) => {
             element:<ProductionSub data={data}  />
         },
         {
-            path:'/distributor/:id/:slug_az',
+            path:'/distributor/:id',
             element:<Distributor data={data} />
         },
         // {
         //     path:'/distributor/:id',
-        //     element:<DistributorItem data={data} />
-        // },
-        // {
-        //     path:'/distributor/:id/:id',
         //     element:<DistributorSingle data={data} />
         // },
         {

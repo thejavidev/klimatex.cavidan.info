@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link, useParams } from 'react-router-dom';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { useEffect } from 'react';
 
 const ProductionSub = ({ data }) => {
   const [t] = useTranslation("translation");
@@ -17,7 +18,9 @@ const ProductionSub = ({ data }) => {
   const currentPost = production?.find((post) => post?.slug_az === slug_az);
   const currentItem = currentPost?.products;
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <>
