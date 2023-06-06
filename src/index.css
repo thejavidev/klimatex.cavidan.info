@@ -9,6 +9,8 @@
     --bgef:#EFEFEF;
     --breadcump:#BEBEBE;
     --footer:#464E55;
+    --bgf0:#F0F0F0;
+    --date:linear-gradient(90deg, rgb(17, 182, 228) 0%, rgb(238, 47, 65) 100%);
 }
 body{
     background: var(--bgef);
@@ -345,4 +347,18 @@ img{
 .tab2n:nth-child(2n){
     flex-direction: row-reverse;
     background-color: #fff;
+}
+.blog h1{
+    font-size: 30px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.blog h2{
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--textsky);
+}
+.rounded-left{
+    border-top-right-radius: 10px;
+    background: var(--date);
 }

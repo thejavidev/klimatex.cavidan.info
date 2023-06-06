@@ -233,7 +233,7 @@ const Home = ({data}) => {
               homeAPI[4]?.data && homeAPI[4]?.data?.map((cur, i) => (
                 <SwiperSlide key={i}>
                   <div className="flex justify-center items-center  h-[60px]">
-                    <LazyLoadImage src={cur?.src} className='border-2 grayscale-[100%] hover:grayscale-0' />
+                    <LazyLoadImage src={cur?.src} className='grayscale-[100%] hover:grayscale-0' />
                   </div>
                 </SwiperSlide>
               ))

@@ -61,19 +61,19 @@ const Router = ({data}) => {
         // },
         {
             path:'/license',
-            element:<License />
+            element:<License data={data} />
         },
         {
             path:'/blog',
-            element:<Blog />
+            element:<Blog data={data} />
         },
         {
             path:'/blog/:slug_az',
-            element:<BlogItem />
+            element:<BlogItem data={data} />
         },
         {
             path:'/contact',
-            element:<Contact />
+            element:<Contact data={data} />
         },
        
     ]
