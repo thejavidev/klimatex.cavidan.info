@@ -30,15 +30,15 @@ const BlogItem = ({ data }) => {
         transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
-          <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+          <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("blog")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("blog")}</h2>
           </div>
         </div>
         <section id="1">
           <Container fluid className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[100px] pr-[100px] lg:pl-[20px] lg:pr-[20px] relative'>
             <Col lg={12} className='pb-[40px]'>
-              <LazyLoadImage src={currentPost?.cover} className='w-full h-[500px]' />
+              <LazyLoadImage src={currentPost?.cover} className='w-full h-[500px] lg:h-[250px]' />
             </Col>
             <Col lg={12} className='flex flex-col justify-center h-full'>
               <div className="blog">

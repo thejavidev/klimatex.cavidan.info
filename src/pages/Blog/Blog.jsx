@@ -35,22 +35,22 @@ const Blog = ({ data }) => {
         transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
-          <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+          <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("blog")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px]  font-[200] capitalize transfrom70'>{t("blog")}</h2>
           </div>
         </div>
         <section id="1">
           <Container fluid className=' bg-[--bgef] min-h-[55vh]   relative'>
             <Row>
-              <Col lg={12} className='bg-[--bgf0] hiddden pt-[60px] pb-[60px] pl-[60px] pr-[60px] lg:pl-[20px] lg:pr-[20px]'>
+              <Col lg={12} className='bg-[--bgf0] hiddden pt-[60px] md:pt-[20px] pb-[60px] pl-[60px] pr-[60px] lg:pl-[20px] lg:pr-[20px]'>
                 {
                   bloglead && bloglead?.map((cur, i) => (
                     <Row key={i}>
-                      <Col lg={6}>
-                        <div className="flex justify-center flex-col h-full pr-[50px]">
-                          <div className="blog">
-                            <div dangerouslySetInnerHTML={{ __html: cur?.title_az && ml(cur?.title_az, cur?.title_ru, cur?.title_en) }}>
+                      <Col lg={6} >
+                        <div className="flex justify-center flex-col h-full pr-[50px] lg:pr-[0]">
+                          <div className="blog md:pt-[20px]">
+                            <div  dangerouslySetInnerHTML={{ __html: cur?.title_az && ml(cur?.title_az, cur?.title_ru, cur?.title_en) }}>
                             </div>
                           </div>
                           <div className="pt-[30px] pb-[30px]">
@@ -65,10 +65,10 @@ const Blog = ({ data }) => {
                           </div>
                         </div>
                       </Col>
-                      <Col lg={6}>
-                        <div className="relative ">
+                      <Col lg={6} className='order-[-1]'>
+                        <div className="relative md:mt-[20px]">
                           <div className="absolute bottom-[0] left-[0] w-max opacity-[0.75] pt-[6px] pb-[6px] pl-[20px] pr-[20px] rounded-left text-[--textfff] font-[600] ">{fulldate}</div>
-                          <LazyLoadImage src={cur?.banner} className='h-[500px] w-full ' />
+                          <LazyLoadImage src={cur?.banner} className='h-[500px]  w-full lg:h-[250px]' />
                         </div>
                       </Col>
                     </Row>
@@ -83,7 +83,7 @@ const Blog = ({ data }) => {
                         <Link to={`${cur?.slug_az}`}>
                           <div className="relative">
                             <div className="absolute bottom-[0] left-[0] w-max opacity-[0.75] pt-[6px] pb-[6px] pl-[20px] pr-[20px] rounded-left text-[--textfff] font-[600] ">{fulldate}</div>
-                            <LazyLoadImage src={cur?.banner} className='h-[400px] w-full' />
+                            <LazyLoadImage src={cur?.banner} className='h-[400px] w-full md:h-[250px]' />
                           </div>
                           <div className="pt-[20px]">
                             <div className='font-[700] ' dangerouslySetInnerHTML={{ __html: cur?.text_az && ml(cur?.title_az, cur?.title_ru, cur?.title_en) }}></div>

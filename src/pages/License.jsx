@@ -28,9 +28,9 @@ const License = ({ data }) => {
         transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
-          <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+          <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("license")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("license")}</h2>
           </div>
         </div>
         <section id="1" className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
@@ -42,7 +42,7 @@ const License = ({ data }) => {
                     <div className="relative grayscale1 tansitionall">
                       <LazyLoadImage src={cur?.src} />
                       <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
-                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
+                     text-[--textfff] text-[25px] md:text-[20px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
                     </div>
 
                   </Col>
