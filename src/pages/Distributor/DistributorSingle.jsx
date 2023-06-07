@@ -34,9 +34,9 @@ const DistributorSingle = ({ data }) => {
                 transition={{ duration: 1.05, ease: "easeOut" }}
             >
                 <div className="relative w-full breadcump">
-                    <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+                    <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
                     <div className="" >
-                        <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("distribution")}</h2>
+                        <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("distribution")}</h2>
                     </div>
                 </div>
                 <section className='pt-[60px] bg-[--bgef] min-h-[55vh]  relative'>

@@ -7,7 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Brends = ({brend}) => {
   return (
     <>
-        <div id='5' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative ' data-aos="fade-up" data-aos-duration="2000">
+        <div id='5' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative ' >
           <Swiper
             slidesPerView={7}
             spaceBetween={20}
