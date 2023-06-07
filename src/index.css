@@ -208,6 +208,9 @@ img{
 .tansitionall2{
     transition: all .4s ease-in-out;
 }
+.tansitionheader{
+    transition: all 0.6s ease;
+}
 .services_img::before{
     content: "";
     position: absolute;
@@ -367,7 +370,16 @@ img{
     border-top-right-radius: 10px;
     background: var(--date);
 }
-.open-header{
+.mobileHeader.open-header{
     right: 0;
-    
+}
+.mobile-menu-overlay{
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(25, 25, 25, 0.75);
+}
+.mobile-menu-overlay.active {
+    visibility: visible;
+    opacity: 1;
 }

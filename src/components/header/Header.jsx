@@ -13,7 +13,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import $ from 'jquery';
 import { Container } from 'react-bootstrap';
 import { useRef } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu,AiOutlineClose } from 'react-icons/ai';
 
 
 const Header = ({data}) => {
@@ -24,6 +24,7 @@ const Header = ({data}) => {
   const youtube = data?.options?.options?.youtube;
   const [t, i18n] = useTranslation("translation");
   const openMobileHeader =useRef();
+  const OverlayDiv =useRef();
   const menu = [
     {
       id: 1,
@@ -73,6 +74,11 @@ const Header = ({data}) => {
   ]
   const openMenu = () => {
     openMobileHeader?.current?.classList?.add('open-header');
+    OverlayDiv?.current?.classList?.add('active');
+  }
+  const CloseMenu = () => {
+    openMobileHeader?.current?.classList?.remove('open-header');
+    OverlayDiv?.current?.classList?.remove('active');
   }
   const [open, setOpen] = useState(false);
   const clickHandle = async (lang) => {
@@ -121,6 +127,7 @@ const Header = ({data}) => {
 
   return (
     <>
+     <div onClick={CloseMenu} ref={OverlayDiv} className="mobile-menu-overlay  block fixed left-[0] top-[0] bottom-[0] right-[0] z-[100] overlay"></div>
       <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px]`}>
         <Container fluid >
           <div className={`topmenu w-full flex justify-between bg-transparent pt-[20px] pb-[5px] pl-2 pr-2`}>
@@ -172,15 +179,18 @@ const Header = ({data}) => {
               </Link>
             </div>
             <div className="">
-              <div className="hidden lg:block" onClick={openMenu}>
-                  <AiOutlineMenu />
+              <div className="hidden lg:flex" onClick={openMenu}>
+                  <AiOutlineMenu className='text-[25px] mr-2 cursor-pointer' />
               </div>
-              <ul ref={openMobileHeader} className='flex items-center justify-end w-full lg:fixed tansitionall
+              <ul ref={openMobileHeader} className='flex items-center justify-end w-full lg:fixed mobileHeader tansitionheader
               lg:right-[-100%] lg:flex-col lg:w-[300px] lg:bg-[--header] lg:p-[30px] lg:h-full lg:top-[0] lg:justify-start lg:pt-[50px]'>
+                <div className="hidden lg:flex" >
+                  <AiOutlineClose  className='text-[25px] text-[#fff] mr-2 cursor-pointer absolute right-[15px] top-[15px]' onClick={CloseMenu} />
+                </div>
                 {
                   menu && menu?.map((cur, i) => (
                     <li key={i} className='pt-[10px] pb-[10px] pl-0 pr-0 ml-[20px] lg:ml-[10px]'>
-                      <NavLink to={cur?.path} className='text-[--text] capitalize relative text-[14px] lg:text-[#fff]'>
+                      <NavLink onClick={CloseMenu} to={cur?.path} className='text-[--text] capitalize relative text-[14px] lg:text-[#fff]'>
                         {cur?.name}
                       </NavLink>
                     </li>
