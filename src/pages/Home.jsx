@@ -73,7 +73,7 @@ const Home = ({data}) => {
             {
               homeAPI[0]?.data && homeAPI[0]?.data?.map((cur, i) => (
                 <SwiperSlide key={i} >
-                  <LazyLoadImage src={cur?.src} alt={cur?.alt} className='h-[700px] w-full' />
+                  <LazyLoadImage src={cur?.src} alt={cur?.alt} className='h-[700px] lg:h-[350px] w-full' />
                 </SwiperSlide>
               ))
             }
@@ -91,8 +91,8 @@ const Home = ({data}) => {
                   <a href={`tel:${str}`} className='text-[--text] text-[18px]' data-aos="fade-right" data-aos-duration="2000"><LocalPhoneIcon fontSize="large" className='bg-[--textsky] rounded-full text-[--textfff] p-[5px]' /> {phone} </a>
                 </p>
               </Col>
-              <Col lg={6}>
-                <div className="p-[50px] lg:p-[10px] lg:mt-5" data-aos="fade-left" data-aos-duration="2000">
+              <Col lg={6} className='md:p-[0] md:m[0]'>
+                <div className="p-[50px] lg:p-[10px] lg:mt-5 md:p-0" data-aos="fade-left" data-aos-duration="2000">
                   <LazyLoadImage src={homeAPI[1]?.data?.missiya_image} className='h-[100%]   w-full shadow-auto' />
                 </div>
               </Col>
@@ -101,12 +101,12 @@ const Home = ({data}) => {
         </section>
 
         <section id="3" className='pt-[60px] pb-[60px] pl-0 pr-0 relative'>
-          <div className="top flex justify-center items-center bg-center bg-cover bg-no-repeat h-[500px] relative after:content-[''] 
+          <div className="top flex justify-center items-center bg-center bg-cover bg-no-repeat h-[500px] md:h-[350px] relative after:content-[''] 
            after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:w-full after:h-full after:bg-[--bgred] after:mix-blend-multiply"
             style={{ backgroundImage: `url(${homeAPI[7]?.data})` }}>
             <div className="z-20 flex flex-col items-center " data-aos="fade-left" data-aos-duration="3000">
-              <h2 className='text-[--textfff] text-[40px] font-[600]'>{t("xidmeth2")}</h2>
-              <h3 className='text-[--textfff] font-[200] text-[35px]'>{(t("xidmeth3"))}</h3>
+              <h2 className='text-[--textfff] text-[40px] md:text-[25px] font-[600]'>{t("xidmeth2")}</h2>
+              <h3 className='text-[--textfff] font-[200] text-[35px] md:text-[25px]'>{(t("xidmeth3"))}</h3>
             </div>
           </div>
           <Container fluid>
@@ -144,7 +144,7 @@ const Home = ({data}) => {
                     <SwiperSlide key={i} >
                       <Link to={`/service/${cur?.slug_az}`}>
                         <div className="bg-[--textfff] services_img tansitionall cursor-pointer flex flex-col justify-between items-center
-                     relative p-[40px] h-[200px] 
+                     relative p-[40px] md:p-[10px] h-[200px] 
                      ">
                           <div className=" flex flex-col items-center justify-center w-full z-5 h-full">
                             <LazyLoadImage src={cur?.src} className='curimg' alt={cur?.alt_az} />
@@ -152,7 +152,7 @@ const Home = ({data}) => {
 
                           </div>
                           <div className="text-center z-5 pt-[10px] z-[20]">
-                            <h3 className='h3 text-[16px] text-[--textsky] uppercase '>{cur?.name_az}</h3>
+                            <h3 className='h3 text-[16px] md:text-[14px] m-0 text-[--textsky] uppercase '>{cur?.name_az}</h3>
                           </div>
                         </div>
                       </Link>
@@ -173,7 +173,8 @@ const Home = ({data}) => {
                 </div>
                 <div className="">
                   <Link to={'/project'}>
-                    <button className='mt-[20px] bg-[--textfff] text-[--textsky] capitalize pl-[20px] pr-[20px] pt-[10px] pb-[10px] rounded-[4px] font-[500]'>{t("loadmore")}</button>
+                    <button className='mt-[20px] bg-[--textfff] text-[--textsky] capitalize
+                     pl-[20px] pr-[20px] pt-[10px] pb-[10px] md:pl-[5px] md:pr-[5px] md:pt-[5px] md:pb-[5px] md:text-[13px] rounded-[4px] font-[500]'>{t("loadmore")}</button>
                   </Link>
                 </div>
               </Col>
