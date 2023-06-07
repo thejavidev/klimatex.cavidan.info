@@ -29,23 +29,23 @@ const Production = ({ data }) => {
         transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
-          <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+          <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("production")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("production")}</h2>
           </div>
         </div>
-        <section id="1" className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
+        <section id="1" className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] md:pl-[10px] md:pr-[10px] relative'>
           <Container fluid >
             <Row>
               {
                 production && production?.map((cur, index) => (
-                  <Col key={index} xl={2} lg={3} md={4} sm={6} xs={12} data-aos="fade-up" data-aos-duration="2000" data-aos-offset={(280 * index) / 5}>
+                  <Col key={index} xl={2} lg={3} md={4} sm={6} xs={6} data-aos="fade-up" data-aos-duration="2000" data-aos-offset={(280 * index) / 5}>
                     <Link to={`${cur?.slug_az}`}>
                       <div className="flex justify-center flex-col h-full w-full cursor-pointer productionimg">
                         <div className="top">
                           <LazyLoadImage src={cur?.src} className='w-full tansitionall2' />
                         </div>
-                        <div className="h2 mt-[20px] bg-[#fff] flex items-center justify-center pt-[10px] pb-[10px] pl-[30px] pr-[30px] text-center tansitionall2 h-full">
+                        <div className="h2 mt-[20px] bg-[#fff] flex items-center justify-center pt-[10px] pb-[10px] pl-[30px] pr-[30px] md:pl-[5px] md:pr-[5px] text-center tansitionall2 h-full">
                           <h2 className='text-[16px]'>{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
                         </div>
                       </div>
