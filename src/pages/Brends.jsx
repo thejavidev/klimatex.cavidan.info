@@ -27,7 +27,7 @@ const Brends = ({brend}) => {
                 slidesPerView: 2,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 3,
 
               },
               768: {

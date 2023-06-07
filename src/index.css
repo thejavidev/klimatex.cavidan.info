@@ -9,6 +9,7 @@
     --bgef:#EFEFEF;
     --breadcump:#BEBEBE;
     --footer:#464E55;
+    --header:#272727;
     --bgf0:#F0F0F0;
     --date:linear-gradient(90deg, rgb(17, 182, 228) 0%, rgb(238, 47, 65) 100%);
 }
@@ -365,4 +366,8 @@ img{
 .rounded-left{
     border-top-right-radius: 10px;
     background: var(--date);
+}
+.open-header{
+    right: 0;
+    
 }

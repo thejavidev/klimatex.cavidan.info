@@ -81,18 +81,18 @@ const Home = ({data}) => {
           </Swiper>
         </section>
 
-       <section id="2" className='pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] pt-[50px]'>
+       <section id="2" className='pl-[50px] pr-[50px] xl:pl-[20px] xl:pr-[20px] pt-[50px] '>
           <Container fluid >
             <Row  >
               <Col lg={6} className="flex justify-center flex-col"  >
-                <h2 className='font-[600] text-[40px] text-[--text] mb-[30px]' >Havalandırma <span className='text-[--textsky]'>sistemləri</span></h2>
+                <h2 className='font-[600] text-[40px] xl:text-[30px] text-[--text] mb-[30px]' >Havalandırma <span className='text-[--textsky]'>sistemləri</span></h2>
                 <div className='columns-2 flex flex-col gap-[40px] text-justify' data-aos="fade-right" data-aos-duration="2000" dangerouslySetInnerHTML={{ __html: homeAPI[1]?.data && homeAPI[1]?.data?.missiya_text_az }}></div>
                 <p className='mt-[40px] flex items-center'>
                   <a href={`tel:${str}`} className='text-[--text] text-[18px]' data-aos="fade-right" data-aos-duration="2000"><LocalPhoneIcon fontSize="large" className='bg-[--textsky] rounded-full text-[--textfff] p-[5px]' /> {phone} </a>
                 </p>
               </Col>
               <Col lg={6}>
-                <div className="p-[50px]" data-aos="fade-left" data-aos-duration="2000">
+                <div className="p-[50px] lg:p-[10px] lg:mt-5" data-aos="fade-left" data-aos-duration="2000">
                   <LazyLoadImage src={homeAPI[1]?.data?.missiya_image} className='h-[100%]   w-full shadow-auto' />
                 </div>
               </Col>
@@ -141,7 +141,7 @@ const Home = ({data}) => {
               >
                 {
                   homeAPI[2]?.data && homeAPI[2]?.data?.map((cur, i) => (
-                    <SwiperSlide key={i} data-aos="fade-down" data-aos-duration="2000">
+                    <SwiperSlide key={i} >
                       <Link to={`/service/${cur?.slug_az}`}>
                         <div className="bg-[--textfff] services_img tansitionall cursor-pointer flex flex-col justify-between items-center
                      relative p-[40px] h-[200px] 
@@ -167,9 +167,9 @@ const Home = ({data}) => {
         <section id='4' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
           <Container fluid>
             <Row className='m-0 p-0' data-aos="fade-up" data-aos-duration="2000">
-              <Col lg={4} md={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
+              <Col lg={4} md={6} xs={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
                 <div className="">
-                  <h3 className='text-[--textfff] capitalize text-[30px]'>{t("projects")}</h3>
+                  <h3 className='text-[--textfff] capitalize text-[30px] xl:text-[20px]'>{t("projects")}</h3>
                 </div>
                 <div className="">
                   <Link to={'/project'}>
@@ -179,11 +179,11 @@ const Home = ({data}) => {
               </Col>
               {
                 homeAPI[3]?.data && homeAPI[3]?.data.slice(0, 5)?.map((cur, i) => (
-                  <Col lg={4} key={i} className="overflow-hidden p-0 m-0" >
+                  <Col lg={4} md={6} xs={6} key={i} className="overflow-hidden p-0 m-0" >
                     <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                       <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
                       <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
-                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{cur?.name_az}</h2>
+                     text-[--textfff] text-[25px] xl:text-[20px] md:text-[15px] xl:p-[10px] m-0  opacity-[0] capitalize tansitionall' >{cur?.name_az}</h2>
                     </Link>
                   </Col>
                 ))

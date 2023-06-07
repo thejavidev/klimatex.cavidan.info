@@ -12,6 +12,9 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import $ from 'jquery';
 import { Container } from 'react-bootstrap';
+import { useRef } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
+
 
 const Header = ({data}) => {
   const tel1 = data?.options?.options?.tel1;
@@ -20,6 +23,7 @@ const Header = ({data}) => {
   const instagram = data?.options?.options?.instagram;
   const youtube = data?.options?.options?.youtube;
   const [t, i18n] = useTranslation("translation");
+  const openMobileHeader =useRef();
   const menu = [
     {
       id: 1,
@@ -67,7 +71,9 @@ const Header = ({data}) => {
       name: `${t('contact')}`,
     },
   ]
-
+  const openMenu = () => {
+    openMobileHeader?.current?.classList?.add('open-header');
+  }
   const [open, setOpen] = useState(false);
   const clickHandle = async (lang) => {
     await i18n.changeLanguage(lang);
@@ -115,7 +121,7 @@ const Header = ({data}) => {
 
   return (
     <>
-      <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px]`}>
+      <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px]`}>
         <Container fluid >
           <div className={`topmenu w-full flex justify-between bg-transparent pt-[20px] pb-[5px] pl-2 pr-2`}>
             <div className="flex items-center">
@@ -166,11 +172,15 @@ const Header = ({data}) => {
               </Link>
             </div>
             <div className="">
-              <ul className='flex items-center justify-end w-full'>
+              <div className="hidden lg:block" onClick={openMenu}>
+                  <AiOutlineMenu />
+              </div>
+              <ul ref={openMobileHeader} className='flex items-center justify-end w-full lg:fixed tansitionall
+              lg:right-[-100%] lg:flex-col lg:w-[300px] lg:bg-[--header] lg:p-[30px] lg:h-full lg:top-[0] lg:justify-start lg:pt-[50px]'>
                 {
                   menu && menu?.map((cur, i) => (
-                    <li key={i} className='pt-[10px] pb-[10px] pl-0 pr-0 ml-[20px]'>
-                      <NavLink to={cur?.path} className='text-[--text] capitalize relative text-[14px]'>
+                    <li key={i} className='pt-[10px] pb-[10px] pl-0 pr-0 ml-[20px] lg:ml-[10px]'>
+                      <NavLink to={cur?.path} className='text-[--text] capitalize relative text-[14px] lg:text-[#fff]'>
                         {cur?.name}
                       </NavLink>
                     </li>

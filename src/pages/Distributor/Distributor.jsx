@@ -22,7 +22,6 @@ const Distributor = ({ data }) => {
   const subcategories = currentPost?.sub_categories;
   useEffect(() => {
     window.scrollTo(0, 0)
-
   }, []);
 
   return (

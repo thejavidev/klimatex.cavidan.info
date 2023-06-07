@@ -75,9 +75,9 @@ const About = ({ data }) => {
                 {
                   shoromimages && shoromimages?.slice(0, next).map((cur, i) => (
                     <Col lg={4} key={i} className="p-[10px!important]" data-aos="fade-up" data-aos-duration="2000">
-                      <LightgalleryItem group="any" src={cur?.images}>
+                      <LightgalleryItem group="any" src={cur?.images} >
                         <a >
-                          <LazyLoadImage src={cur?.images} className='w-[100%!important] h-[380px]' />
+                          <LazyLoadImage src={cur?.images} className='w-[100%!important] h-[380px] cursor-zoom-in' />
                         </a>
                       </LightgalleryItem>
                     </Col>

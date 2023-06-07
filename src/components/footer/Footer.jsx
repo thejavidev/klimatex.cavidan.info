@@ -39,11 +39,11 @@ const Footer = ({data}) => {
   return (
     <>
       <footer>
-        <div className="w-full bg-[--bgred] pt-2 pb-2 pl-[100px] pr-[100px]">
+        <div className="w-full bg-[--bgred] pt-2 pb-2 pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px]">
           <Row>
-            <Col lg={8}>
+            <Col xl={8} lg={12}>
               <Row className='items-center'>
-                <Col lg={3}>
+                <Col xl={3} lg={4} md={12} className='md:mb-4'>
                   <div className="flex items-center">
                     <LocalPhoneIcon sx={{ fontSize: 30 }} className='text-[#fff]' />
                     <div className="flex flex-col ml-2">
@@ -52,13 +52,13 @@ const Footer = ({data}) => {
                     </div>
                   </div>
                 </Col>
-                <Col lg={3}>
+                <Col xl={3} lg={4}  md={12} className='md:mb-4'>
                   <div className="flex items-center">
                     <AddLocationIcon sx={{ fontSize: 30 }} className='text-[#fff] mr-2' />
                     <span className='text-[#fff]'>{ml(api[0]?.map_az, api[0]?.map_ru, api[0]?.map_en)}</span>
                   </div>
                 </Col>
-                <Col lg={3}>
+                <Col xl={3} lg={4}  md={12}>
                   <div className="flex items-center">
                     <EmailIcon sx={{ fontSize: 30 }} className='text-[#fff] mr-2' />
                     <a className='text-[#fff]' href={`mailto:${api[0]?.mail}`}>{api[0]?.mail}</a>
@@ -68,7 +68,7 @@ const Footer = ({data}) => {
             </Col>
           </Row>
         </div>
-        <div className="w-full bg-[--footer] flex justify-between pt-4 pb-3 pl-[100px] pr-[100px]">
+        <div className="w-full bg-[--footer] flex justify-between pt-4 pb-3 pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px]">
           <div className="" onClick={onTop}>
             <LazyLoadImage src={klimatex_black} className='cursor-pointer w-[120px]' />
           </div>
