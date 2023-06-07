@@ -17,32 +17,32 @@ const Contact = ({ data }) => {
         transition={{ duration: 1.05, ease: "easeOut" }}
       >
         <div className="relative w-full breadcump">
-          <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+          <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("contact")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("contact")}</h2>
           </div>
         </div>
         <section id='1' className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
           <Container fluid>
             <Row>
-              <form className='flex flex-wrap w-full'>
-                <Row className='w-full'>
-                  <Col lg={4}>
+              <form className='flex flex-wrap w-full lg:justify-center'>
+                <Row className='w-full '>
+                  <Col lg={4} className='lg:mb-[20px] lg:p-0'>
                     <div className="w-full">
                       <input type="text" placeholder='Ad,soyad' className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
-                  <Col lg={4}>
+                  <Col lg={4} className='lg:mb-[20px] lg:p-0'>
                     <div className="w-full">
                       <input type="text" placeholder='E-mail' className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
-                  <Col lg={4}>
-                    <div className="w-full">
+                  <Col lg={4} className='lg:p-0'>
+                    <div className="w-full ">
                       <input type="text" placeholder='Nömrə' className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
-                  <Col lg={12}>
+                  <Col lg={12} className='lg:p-0'>
                     <div className='mt-[40px]'>
                       <textarea placeholder='Mesaj' className='w-full outline-none shadow-none border-none resize-none h-[300px] caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px] '></textarea>
                     </div>

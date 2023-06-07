@@ -164,7 +164,7 @@ const Home = ({data}) => {
           </Container>
         </section>
 
-        <section id='4' className='pt-[60px] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
+        <section id='4' className='pt-[60px] pb-[60px] md:pb-[20px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
           <Container fluid>
             <Row className='m-0 p-0' data-aos="fade-up" data-aos-duration="2000">
               <Col lg={4} md={6} xs={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
