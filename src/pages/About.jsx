@@ -59,7 +59,7 @@ const About = ({ data }) => {
                 </Col>
                 <Col lg={6} data-aos="fade-left" data-aos-duration="2000">
                   <div className="pl-[20px]">
-                    <LazyLoadImage src={about?.about_1_img} className='w-full lg:h-[500px] lg:object-contain' />
+                    <LazyLoadImage src={about?.about_1_img} className='w-full xl:h-[500px] lg:object-contain md:object-cover md:h-full' />
                   </div>
                 </Col>
               </Row>
@@ -77,7 +77,7 @@ const About = ({ data }) => {
                     <Col xl={4} lg={4} md={6} xs={6}  key={i} className="p-[10px!important]" data-aos="fade-up" data-aos-duration="2000">
                       <LightgalleryItem group="any" src={cur?.images} >
                         <a >
-                          <LazyLoadImage src={cur?.images} className='w-[100%!important] h-[380px] cursor-zoom-in' />
+                          <LazyLoadImage src={cur?.images} className='w-[100%!important] h-[380px] md:h-[150px] cursor-zoom-in' />
                         </a>
                       </LightgalleryItem>
                     </Col>
@@ -96,11 +96,11 @@ const About = ({ data }) => {
 
         <div id="3" className='mt-[10px] pb-[50px] bg-[--textfff]'>
           <Container fluid>
-            <div className="pl-[50px] pr-[50px] pt-[40px]">
-              <h2 className='font-[700] text-[40px] text-[--text]  mb-[30px] capitalize' ata-aos="fade-right"
+            <div className="pl-[50px] pr-[50px] pt-[40px] lg:pl-[20px] lg:pr-[20px] ">
+              <h2 className='font-[700] text-[40px] lg:text-[25px]  text-[--text]  mb-[30px] capitalize' ata-aos="fade-right"
                 data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom360")}</h2>
               <div className="relative" data-aos="fade-up" data-aos-duration="2000">
-                <LazyLoadImage src={about?.showroom_360_image} className='w-full h-[500px] ' />
+                <LazyLoadImage src={about?.showroom_360_image} className='w-full h-[500px] lg:h-[300px]' />
                 <span onClick={() => setModalShow(true)} className='absolute top-[50%] left-[50%] transform50 cursor-pointer'><PlayArrowIcon sx={{ fontSize: 90 }} className='text-[--textfff]' /></span>
                 <Modal
                   size="lg"
@@ -120,16 +120,16 @@ const About = ({ data }) => {
 
         <section id="4" className=' bg-[--bgef]  pt-[40px] pb-[40px]'>
           <Container fluid>
-            <div className="pl-[50px] pr-[50px]">
+            <div className="pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px]">
               <Row>
-                <Col lg={7} className='p-[20px] flex justify-center flex-col' data-aos="fade-right" data-aos-duration="2000">
-                  <h2 className='text-[40px] font-[700] capitalize mb-[20px]'>{t("production")}</h2>
+                <Col lg={7} className='p-[20px] lg:p-[0] lg:mb-[30px] flex justify-center flex-col' data-aos="fade-right" data-aos-duration="2000">
+                  <h2 className='text-[40px] lg:text-[25px] font-[700] capitalize mb-[20px]'>{t("production")}</h2>
                   <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_2_text_az, about?.about_2_text_ru, about?.about_2_text_en) }}></div>
                 </Col>
-                <Col lg={5} className='p-[20px]'>
-                  <div className="flex border-2 items-center justify-center z-20 relative image" data-aos="zoom-in-up"
+                <Col lg={5} className='p-[20px] lg:p-[0]'>
+                  <div className="flex border-2 items-center justify-center z-20 relative xl:image" data-aos="zoom-in-up"
                     data-aos-anchor-placement="top-center" data-aos-duration="2000">
-                    <LazyLoadImage src={about?.about_2_img} className='h-[400px]  w-full ' />
+                    <LazyLoadImage src={about?.about_2_img} className='h-[400px] md:h-full w-full ' />
                   </div>
                 </Col>
               </Row>
@@ -138,16 +138,16 @@ const About = ({ data }) => {
         </section>
         <section id="5" className=' bg-[--textfff]  '>
           <Container fluid>
-            <div className="pl-[50px] pr-[50px]">
+            <div className="pl-[50px] pr-[50px]  lg:pl-[20px] lg:pr-[20px]">
               <Row className='pt-[50px] pb-[50px]'>
-                <Col lg={5} className=''>
-                  <div className="flex  items-center justify-center z-20 relative image" data-aos="zoom-in-up"
+                <Col lg={5} className='p-0 m-0 '>
+                  <div className="flex  items-center justify-center z-20 relative xl:image" data-aos="zoom-in-up"
                     data-aos-anchor-placement="top-center" data-aos-duration="2000">
-                    <LazyLoadImage src={about?.about_3_img} className='h-[400px]  w-full ' />
+                    <LazyLoadImage src={about?.about_3_img} className='h-[400px] md:h-full w-full ' />
                   </div>
                 </Col>
-                <Col lg={7} className=' flex justify-center flex-col pl-[40px]' data-aos="fade-left" data-aos-duration="2000">
-                  <h2 className='text-[40px] font-[700] capitalize '>{t("servis")}</h2>
+                <Col lg={7} className=' flex justify-center flex-col pl-[40px] lg:pl-[0] lg:mt-4' data-aos="fade-left" data-aos-duration="2000">
+                  <h2 className='text-[40px] lg:text-[25px] font-[700] capitalize '>{t("servis")}</h2>
                   <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_3_text_az, about?.about_3_text_ru, about?.about_3_text_en) }}></div>
                 </Col>
               </Row>
