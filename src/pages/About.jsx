@@ -50,16 +50,16 @@ const About = ({ data }) => {
         />
         <section id="1" className=' bg-[--textfff] '>
           <Container fluid>
-            <div className="pl-[50px] pr-[50px]">
+            <div className="pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] lg:mt-5">
               <Row  >
                 <Col lg={6} className="flex justify-center flex-col" data-aos="fade-right" data-aos-duration="2000">
-                  <h2 className='font-[700] text-[40px] text-[--text] mb-[30px] capitalize'>{t("about")}</h2>
+                  <h2 className='font-[700] text-[40px] lg:text-[25px] text-[--text] mb-[30px] capitalize'>{t("about")}</h2>
                   <div className='columns-2 flex flex-col gap-[40px] text-justify' dangerouslySetInnerHTML={{ __html: about && ml(about?.about_1_text_az, about?.about_1_text_ru, about?.about_1_text_en) }}></div>
 
                 </Col>
                 <Col lg={6} data-aos="fade-left" data-aos-duration="2000">
                   <div className="pl-[20px]">
-                    <LazyLoadImage src={about?.about_1_img} className='w-full' />
+                    <LazyLoadImage src={about?.about_1_img} className='w-full lg:h-[500px] lg:object-contain' />
                   </div>
                 </Col>
               </Row>
@@ -68,13 +68,13 @@ const About = ({ data }) => {
         </section>
         <section id="2" className='pt-20 bg-[--bgef] pb-[30px]'>
           <Container fluid>
-            <div className="pl-[50px] pr-[50px]">
-              <h2 className='font-[700] text-[40px] text-[--text] mb-10  capitalize' data-aos="fade-right"
+            <div className="pl-[50px] pr-[50px]  lg:pl-[20px] lg:pr-[20px] ">
+              <h2 className='font-[700] text-[40px] lg:text-[25px] text-[--text] mb-10  capitalize' data-aos="fade-right"
                 data-aos-anchor-placement="top-center" data-aos-duration="2000">{t("shoroom")}</h2>
               <Row  >
                 {
                   shoromimages && shoromimages?.slice(0, next).map((cur, i) => (
-                    <Col lg={4} key={i} className="p-[10px!important]" data-aos="fade-up" data-aos-duration="2000">
+                    <Col xl={4} lg={4} md={6} xs={6}  key={i} className="p-[10px!important]" data-aos="fade-up" data-aos-duration="2000">
                       <LightgalleryItem group="any" src={cur?.images} >
                         <a >
                           <LazyLoadImage src={cur?.images} className='w-[100%!important] h-[380px] cursor-zoom-in' />
