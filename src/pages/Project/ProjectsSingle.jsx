@@ -31,15 +31,15 @@ const ProjectsSingle = ({ data }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.75, ease: "easeOut" }}>
         <div className="relative w-full breadcump">
-          <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+          <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("project")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("project")}</h2>
           </div>
         </div>
 
         <section id="1" className='pt-[50px] pb-[50px] min-h-[70vh]'>
-          <Container fluid className='pl-[100px] pr-[100px]'>
-            <h2 className='font-[600] text-[40px] pb-[40px]'>{ml(currentPost?.name_az, currentPost?.name_ru, currentPost?.name_en)}</h2>
+          <Container fluid className='pl-[100px] pr-[100px] lg:pl-[20px] lg:pr-[20px]'>
+            <h2 className='font-[600] text-[40px] lg:text-[20px] pb-[40px]'>{ml(currentPost?.name_az, currentPost?.name_ru, currentPost?.name_en)}</h2>
             <Row className=''>
               {
                 currentItem && currentItem?.map((cur, i) => (

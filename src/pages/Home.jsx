@@ -169,7 +169,7 @@ const Home = ({data}) => {
             <Row className='m-0 p-0' data-aos="fade-up" data-aos-duration="2000">
               <Col lg={4} md={6} xs={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-pointer">
                 <div className="">
-                  <h3 className='text-[--textfff] capitalize text-[30px] xl:text-[20px]'>{t("projects")}</h3>
+                  <h3 className='text-[--textfff] capitalize text-[30px] lg:text-[20px]'>{t("projects")}</h3>
                 </div>
                 <div className="">
                   <Link to={'/project'}>
