@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from '../store/posts';
+
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,9 +12,9 @@ import { getMultiLang as ml } from '../MultiLang';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { corn_logo, klimatex_black } from '../../assets';
 
-const Footer = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list)
+const Footer = ({data}) => {
+
+ 
 
   const api = [
     {
@@ -34,8 +34,8 @@ const Footer = () => {
 
   const [t] = useTranslation("translation")
   useEffect(() => {
-    dispatch(loadposts())
-  }, [dispatch]);
+
+  }, []);
   return (
     <>
       <footer>

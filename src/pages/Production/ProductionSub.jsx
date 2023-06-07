@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import { Link, useParams } from 'react-router-dom';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ProductionSub = ({ data }) => {
   const [t] = useTranslation("translation");
@@ -24,6 +25,9 @@ const ProductionSub = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("production")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -162,14 +166,14 @@ const ProductionSub = ({ data }) => {
                           </Col>
                           <Col lg={12} className='bg-[--textfff] mt-[2rem] pt-[30px] pb-[30px] pl-[50px] pr-[50px]'>
                             <div className="flex flex-col justify-start items-start">
-                                <h2 className='font-[400] text-[25px] pb-[50px]'>{ml(cur?.iki_qanadli_barmaqliq_az,cur?.iki_qanadli_barmaqliq_ru,cur?.iki_qanadli_barmaqliq_en)}</h2>
-                                <LazyLoadImage src={cur?.image_4} className=' w-[800px] ' />
+                              <h2 className='font-[400] text-[25px] pb-[50px]'>{ml(cur?.iki_qanadli_barmaqliq_az, cur?.iki_qanadli_barmaqliq_ru, cur?.iki_qanadli_barmaqliq_en)}</h2>
+                              <LazyLoadImage src={cur?.image_4} className=' w-[800px] ' />
                             </div>
                           </Col>
                           <Col lg={12} className='bg-[--bgef] mt-[2rem] pt-[30px] pb-[30px] pl-[50px] pr-[50px]'>
                             <div className="flex flex-col">
-                                <h2 className='font-[400] text-[25px] pb-[50px]'>{ml(cur?.barmaqliq_secimi_cedveli_az,cur?.barmaqliq_secimi_cedveli_ru,cur?.barmaqliq_secimi_cedveli_en)}</h2>
-                                <LazyLoadImage src={cur?.image_5} className='w-[1400px]' />
+                              <h2 className='font-[400] text-[25px] pb-[50px]'>{ml(cur?.barmaqliq_secimi_cedveli_az, cur?.barmaqliq_secimi_cedveli_ru, cur?.barmaqliq_secimi_cedveli_en)}</h2>
+                              <LazyLoadImage src={cur?.image_5} className='w-[1400px]' />
                             </div>
                           </Col>
                         </Row>

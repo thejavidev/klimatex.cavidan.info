@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Breadcump from '../components/others/breadcump';
-import Grid from '@mui/material/Unstable_Grid2';
+
 import { useTranslation } from 'react-i18next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getMultiLang as ml } from '../components/MultiLang';
@@ -10,16 +10,15 @@ import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from '../components/store/posts';
+import { Helmet } from 'react-helmet-async';
 import { motion as m } from "framer-motion";
 
 
-const About = () => {
+const About = ({ data }) => {
   const [t] = useTranslation("translation")
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-  const [open, setOpen] = useState(false);
+
+
+
   const [modalShow, setModalShow] = useState(false);
   const about = data?.options?.about_page;
   const shoromimages = data?.options?.about_page?.showroom_images;
@@ -31,12 +30,16 @@ const About = () => {
   };
   useEffect(() => {
     window.scrollTo(0, 0)
-    dispatch(loadposts())
-  }, [dispatch]);
+
+  }, []);
 
 
   return (
     <>
+      <Helmet>
+
+        <title >KLİMATEX - {t("about")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

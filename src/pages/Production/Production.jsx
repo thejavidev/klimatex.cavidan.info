@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-
+import { Helmet } from 'react-helmet-async';
 
 const Production = ({ data }) => {
   const [t] = useTranslation("translation");
@@ -19,6 +19,9 @@ const Production = ({ data }) => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("production")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

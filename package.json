@@ -35,6 +35,7 @@
     "react-redux": "^8.0.7",
     "react-router": "^6.11.2",
     "react-router-dom": "^6.11.2",
+    "recoil": "^0.7.7",
     "redux": "^4.2.1",
     "swiper": "^9.3.2",
     "yet-another-react-lightbox": "^3.10.1"

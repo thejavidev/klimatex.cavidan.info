@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import { getMultiLang as ml } from '../../components/MultiLang';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-
+import { Helmet } from 'react-helmet-async';
 const Blog = ({ data }) => {
   const [t] = useTranslation("translation");
   const pagebanner = data?.options?.pagetopbanner;
@@ -25,6 +25,9 @@ const Blog = ({ data }) => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("blog")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

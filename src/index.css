@@ -346,8 +346,11 @@ img{
     margin: 10px !important;
 }
 .tab2n:nth-child(2n){
-    flex-direction: row-reverse;
+    
     background-color: #fff;
+}
+.tab2n:nth-child(2n) .row2n{
+    flex-direction: row-reverse;
 }
 .blog h1{
     font-size: 30px;

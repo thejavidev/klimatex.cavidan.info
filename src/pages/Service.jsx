@@ -12,6 +12,7 @@ import { getMultiLang as ml } from '../components/MultiLang';
 import { Tabs, TabList } from '@chakra-ui/react';
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { Helmet } from 'react-helmet-async';
 const Service = ({ data }) => {
 
 
@@ -26,12 +27,15 @@ const Service = ({ data }) => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("service")}</title>
+      </Helmet>
       <div className="bg-[--bgef] min-h-[100vh]">
         <m.div
-         initial={{opacity:0}}
-         animate={{opacity:1}}
-         exit={{opacity:0}}
-         transition={{duration:1.75,ease:"easeOut"}}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.75, ease: "easeOut" }}
         >
           <div className="relative w-full breadcump">
             <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
@@ -97,7 +101,7 @@ const Service = ({ data }) => {
                     <Swiper
                       slidesPerView={1}
                       pagination={{
-                        el:".mypagination"
+                        el: ".mypagination"
                       }}
                       modules={[Pagination]}>
                       {
@@ -119,7 +123,7 @@ const Service = ({ data }) => {
                       }
                     </Swiper>
                     <div className="mypagination bottom-[-50px!important] swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal">
-                      
+
                     </div>
                   </TabList>
                 </Tabs>

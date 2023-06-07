@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 const Projects = ({ data }) => {
   const pagebanner = data?.options?.pagetopbanner;
   const projects = data?.layihe;
@@ -23,6 +24,9 @@ const Projects = ({ data }) => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("project")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

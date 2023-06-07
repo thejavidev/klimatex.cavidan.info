@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import { useParams } from 'react-router';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { LightgalleryItem } from "react-lightgallery";
-
+import { Helmet } from 'react-helmet-async';
 const ProjectsSingle = ({ data }) => {
   const pagebanner = data?.options?.pagetopbanner;
   const [t] = useTranslation("translation");
@@ -16,13 +16,16 @@ const ProjectsSingle = ({ data }) => {
   const { slug_az } = useParams();
   const projects = data?.layihe;
   const currentPost = projects?.find((post) => post?.slug_az === slug_az);
-  const currentItem =currentPost?.images;
+  const currentItem = currentPost?.images;
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("project")}</title>
+      </Helmet>
       <m.div initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -36,7 +39,7 @@ const ProjectsSingle = ({ data }) => {
 
         <section id="1" className='pt-[50px] pb-[50px] min-h-[70vh]'>
           <Container fluid className='pl-[100px] pr-[100px]'>
-            <h2 className='font-[600] text-[40px] pb-[40px]'>{ml(currentPost?.name_az,currentPost?.name_ru,currentPost?.name_en)}</h2>
+            <h2 className='font-[600] text-[40px] pb-[40px]'>{ml(currentPost?.name_az, currentPost?.name_ru, currentPost?.name_en)}</h2>
             <Row className=''>
               {
                 currentItem && currentItem?.map((cur, i) => (
@@ -46,7 +49,7 @@ const ProjectsSingle = ({ data }) => {
                         <LazyLoadImage src={cur?.src} />
                       </a>
                     </LightgalleryItem>
-                    
+
                   </Col>
                 ))
               }

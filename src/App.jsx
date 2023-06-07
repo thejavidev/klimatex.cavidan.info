@@ -1,34 +1,49 @@
 import Layout from "./components/layout/Layout"
 import Router from "./components/router"
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "swiper/css";
-import $ from 'jquery';
 import Loader from "./components/loader/Loader";
 import AOS from 'aos';
-import { useDispatch, useSelector } from "react-redux";
-import { loadposts } from "./components/store/posts";
 import "lightgallery.js/dist/css/lightgallery.css";
+import { atom,useRecoilState } from 'recoil';
+
+const reposstate= atom({
+  key:"repos",
+  default:[]
+})
 function App() {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list)
+
   const [loading, setLoading] = useState(false)
   AOS.init({ once: true, });
-  useEffect(useCallback(() => {
-    dispatch(loadposts())
+
+
+  useEffect(()=>{
     setLoading(true)
-   
     setTimeout(() => {
       setLoading(false)
     }, 2200);
-  }, [dispatch]), [])
+  },[])
+
+  const [respos,setRepos]=useRecoilState(reposstate);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const getRepos = async() =>{
+      const url=(`${import.meta.env.VITE_API}/alldata`);
+      const resp=await fetch(url);
+      const body =await resp.json();
+      setRepos(body)
+    };
+    getRepos()
+  }, []);
+
 
   return (
     <>
       {
         loading ? <Loader /> :
-          <Layout data={data} >
-            <Router data={data} />
+          <Layout data={respos} >
+            <Router data={respos} />
           </Layout>
       }
 

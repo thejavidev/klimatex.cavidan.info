@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { getMultiLang as ml } from '../components/MultiLang';
-
+import { Helmet } from 'react-helmet-async';
 
 const License = ({ data }) => {
 
@@ -18,6 +18,9 @@ const License = ({ data }) => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("license")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,14 +37,14 @@ const License = ({ data }) => {
           <Container fluid >
             <Row>
               {
-                licency && licency?.map((cur,i)=>(
+                licency && licency?.map((cur, i) => (
                   <Col key={i} lg={3} md={4} sm={6} xs={6}>
                     <div className="relative grayscale1 tansitionall">
-                    <LazyLoadImage src={cur?.src} />
-                    <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
-                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az,cur?.name_ru,cur?.name_en)}</h2>
+                      <LazyLoadImage src={cur?.src} />
+                      <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
+                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
                     </div>
-                   
+
                   </Col>
                 ))
               }

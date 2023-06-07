@@ -53,7 +53,7 @@ const Router = ({data}) => {
             element:<Distributor data={data} />
         },
         {
-            path:'/distributor/:id/:id',
+            path:'/distributor/:id/:distribusiya_one_id',
             element:<DistributorSingle data={data} />
         },
         {

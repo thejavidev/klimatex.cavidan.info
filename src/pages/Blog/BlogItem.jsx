@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { getMultiLang as ml } from '../../components/MultiLang';
 import { useParams } from 'react-router';
-
+import { Helmet } from 'react-helmet-async';
 
 const BlogItem = ({ data }) => {
   const [t] = useTranslation("translation");
@@ -20,6 +20,9 @@ const BlogItem = ({ data }) => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title >KLİMATEX - {t("blog")}</title>
+      </Helmet>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

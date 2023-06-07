@@ -7,25 +7,19 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link, NavLink, useParams } from 'react-router-dom';
 import { getMultiLang as ml } from '../../components/MultiLang';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { Tabs } from '@chakra-ui/react'
+import Brends from '../Brends';
+
 
 
 const Distributor = ({ data }) => {
   const [t] = useTranslation("translation");
+  const { id } = useParams()
   const pagebanner = data?.options?.pagetopbanner;
   const distribution = data?.distrubition;
-
-  const { id } = useParams()
-
-
-
+  const brend = data?.brend;
   const currentPost = distribution?.find((post) => post?.id == id);
   const subcategories = currentPost?.sub_categories;
-
-  const currentPost2 = subcategories?.find((post) => post?.distribusiya_one_id == id);
-  const currentProducts = currentPost2?.products;
-
-
   useEffect(() => {
     window.scrollTo(0, 0)
 
@@ -59,16 +53,21 @@ const Distributor = ({ data }) => {
                   </Col>
                 ))
               }
-              <div>
+              <div className='mt-[30px]'>
                 {
-                  subcategories && subcategories?.map((cur, i) => (
-                    <Link to={`${cur?.id}`} key={i}> {ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</Link>
+                  subcategories && subcategories?.slice(0,1)?.map((cur, i) => (
+                    <Link className='bg-[--textfff] pt-[10px] pb-[10px] pl-[20px] pr-[20px]' to={`${cur?.distribusiya_one_id}`} key={i}> {ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</Link>
                   ))
                 }
               </div>
+             <Tabs>
+            
+             </Tabs>
             </Row>
           </Container>
+          <Brends brend={brend} />
         </section>
+       
       </m.div>
     </>
   )
