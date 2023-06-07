@@ -150,7 +150,7 @@ const Header = ({data}) => {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="">
+              <div className="md:hidden">
                 <a href={`tel:${str}`} className='text-[--textfff] text-[14px]'><LocalPhoneIcon fontSize="medium" className='bg-[--textsky] rounded-full text-[--textfff] p-[5px]' /> {tel1} </a>
               </div>
               <ul className='flex items-center gap-3'>

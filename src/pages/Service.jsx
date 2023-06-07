@@ -38,14 +38,14 @@ const Service = ({ data }) => {
           transition={{ duration: 1.75, ease: "easeOut" }}
         >
           <div className="relative w-full breadcump">
-            <LazyLoadImage src={pagebanner} className='w-full h-[395px]' />
+            <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
             <div className="" >
-              <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] font-[200] capitalize transfrom70'>{t("xidmeth3")}</h2>
+              <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px]  lg:text-[25px] font-[200] capitalize transfrom70'>{t("xidmeth3")}</h2>
             </div>
           </div>
           <section id="1" className='pt-[50px]'>
             <Container fluid>
-              <div className='pl-[100px] pr-[100px]'>
+              <div className='pl-[100px] pr-[100px] lg:pl-[20px] lg:pr-[20px]'>
                 <Swiper
                   slidesPerView={7}
                   spaceBetween={20}
@@ -76,10 +76,10 @@ const Service = ({ data }) => {
                 >
                   {
                     service && service?.map((cur, i) => (
-                      <SwiperSlide key={i} data-aos="fade-down" data-aos-duration="2000">
+                      <SwiperSlide key={i} >
                         <NavLink className='service' to={`/service/${cur?.slug_az}`}>
                           <div className="bg-[--textfff] services_img tansitionall cursor-pointer flex flex-col justify-between items-center
-                     relative p-[40px] h-[200px] 
+                     relative p-[40px] lg:p-[10px] h-[200px] 
                      ">
                             <div className=" flex flex-col items-center justify-center w-full z-5 h-full">
                               <LazyLoadImage src={cur?.src} className='curimg' alt={cur?.alt_az} />
@@ -110,12 +110,12 @@ const Service = ({ data }) => {
                             <Row className='items-center'>
                               <Col lg={6} md={12} data-aos="fade-right" >
                                 <div className="">
-                                  <h2 className='font-[600] text-[40px] mb-[40px]'>{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
+                                  <h2 className='font-[600] text-[40px] lg:text-[25px] mb-[40px]'>{ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</h2>
                                   <div dangerouslySetInnerHTML={{ __html: cur && ml(cur?.text_az, cur?.text_ru, cur?.text_en) }}></div>
                                 </div>
                               </Col>
                               <Col lg={6} md={12} data-aos="fade-left" data-aos-duration="2000">
-                                <LazyLoadImage src={cur?.src} className='h-[450px]' />
+                                <LazyLoadImage src={cur?.src} className='h-[450px] md:h-full md:mt-[40px]' />
                               </Col>
                             </Row>
                           </SwiperSlide>
