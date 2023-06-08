@@ -68,11 +68,11 @@ const Footer = ({data}) => {
             </Col>
           </Row>
         </div>
-        <div className="w-full bg-[--footer] flex justify-between pt-4 pb-3 pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px]">
+        <div className="w-full bg-[--footer] flex justify-between pt-4 pb-3 pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px] md:flex-col md:items-center md:gap-[20px]">
           <div className="" onClick={onTop}>
             <LazyLoadImage src={klimatex_black} className='cursor-pointer w-[120px]' />
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 md:flex-col">
             <p className='text-[#fff] uppercase'>{t("huquq")} - {year}</p>
             <div>
               <a href="https://corn.az" target='_blank'>

@@ -128,9 +128,9 @@ const Header = ({data}) => {
   return (
     <>
      <div onClick={CloseMenu} ref={OverlayDiv} className="mobile-menu-overlay  block fixed left-[0] top-[0] bottom-[0] right-[0] z-[100] overlay"></div>
-      <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px]`}>
+      <header className={`header absolute top-0 left-0 right-0 w-full z-[100]  pl-[100px] pr-[100px] xl:pl-[50px] xl:pr-[50px] lg:pl-[20px] lg:pr-[20px] md:pl-[0px] md:pr-[0px]`}>
         <Container fluid >
-          <div className={`topmenu w-full flex justify-between bg-transparent pt-[20px] pb-[5px] pl-2 pr-2`}>
+          <div className={`topmenu w-full flex justify-between bg-transparent pt-[20px] md:pt-[5px] pb-[5px] pl-2 pr-2`}>
             <div className="flex items-center">
               {<Upper
                 toggle={() => setOpen(!open)}
@@ -145,7 +145,7 @@ const Header = ({data}) => {
                     </div>
                   )}
               />}
-              <div className="cursor-pointer">
+              <div className="cursor-pointer hidden">
                 <SearchIcon sx={{ fontSize: 22 }} />
               </div>
             </div>

@@ -20,5 +20,8 @@
     "color":"rəng",
     "usage":"istifadəsi",
     "features":"xüsusiyyətləri",
-    "send":"Göndər"
+    "send":"Göndər",
+    "swal1":"Əla",
+    "sending":"Göndərilir",
+    "swal2":"Mesajınız uğurla göndərildi."
 }

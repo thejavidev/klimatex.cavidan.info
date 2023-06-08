@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root{
     --text:#000;
     --textsky:#3EA3DC;
@@ -12,6 +13,9 @@
     --header:#272727;
     --bgf0:#F0F0F0;
     --date:linear-gradient(90deg, rgb(17, 182, 228) 0%, rgb(238, 47, 65) 100%);
+}
+body,html{
+    font-family: 'Roboto', sans-serif !important;
 }
 body{
     background: var(--bgef);
@@ -391,3 +395,44 @@ img{
     visibility: visible;
     opacity: 1;
 }
+.spiper-loader {
+    display: block;
+    --height-of-loader: 4px;
+    --loader-color: #0071e2;
+    width: 130px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: rgba(0,0,0,0.2);
+    position: relative;
+  }
+  
+  .spiper-loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+  }
+  
+  @keyframes moving {
+    50% {
+      width: 100%;
+    }
+  
+    100% {
+      width: 0;
+      right: 0;
+      left: unset;
+    }
+  }
+  .carouselbanner h2{
+    font-size: 60px;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--textfff);
+  }

@@ -11,7 +11,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { motion as m } from "framer-motion";
 import Brends from './Brends';
-
+import { getMultiLang as ml } from '../components/MultiLang';
 
 
 
@@ -73,7 +73,11 @@ const Home = ({data}) => {
             {
               homeAPI[0]?.data && homeAPI[0]?.data?.map((cur, i) => (
                 <SwiperSlide key={i} >
-                  <LazyLoadImage src={cur?.src} alt={cur?.alt} className='h-[700px] lg:h-[350px] w-full' />
+                  <div className="relative">
+                     <LazyLoadImage src={cur?.src} alt={cur?.alt} className='h-[700px] lg:h-[350px] w-full' />
+                     <div className='absolute left-[20%] top-[50%] transform50 carouselbanner ' dangerouslySetInnerHTML={{ __html:cur?.title_az && ml(cur?.title_az,cur?.title_ru,cur?.title_en) }}></div>
+                  </div>
+               
                 </SwiperSlide>
               ))
             }
@@ -114,14 +118,19 @@ const Home = ({data}) => {
               <Swiper
                 slidesPerView={7}
                 spaceBetween={20}
-                speed={1200}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
                 breakpoints={{
                   40: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
 
                   },
                   340: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                   },
                   640: {
                     slidesPerView: 2,
