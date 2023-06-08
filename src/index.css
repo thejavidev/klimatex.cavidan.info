@@ -370,14 +370,7 @@ img{
     font-size: 30px;
     color: var(--textsky);
 }
-@media screen and (max-width:767px) {
-    .blog h1{
-        font-size: 20px;
-    }
-    .blog h2{
-        font-size: 20px;
-    }
-}
+
 .rounded-left{
     border-top-right-radius: 10px;
     background: var(--date);
@@ -436,3 +429,19 @@ img{
     line-height: 1.4;
     color: var(--textfff);
   }
+  @media screen and (max-width:991px) {
+    .blog h1{
+        font-size: 20px;
+    }
+    .blog h2{
+        font-size: 20px;
+    }
+    .carouselbanner h2{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:680px){
+    .carouselbanner h2{
+        font-size: 20px;
+    }
+}

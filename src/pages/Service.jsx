@@ -13,6 +13,7 @@ import { Tabs, TabList } from '@chakra-ui/react';
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { Helmet } from 'react-helmet-async';
+
 const Service = ({ data }) => {
 
 
@@ -87,7 +88,7 @@ const Service = ({ data }) => {
 
                             </div>
                             <div className="text-center z-5 pt-[10px] z-[20]">
-                              <h3 className='h3 text-[16px] text-[--textsky] uppercase '>{cur?.name_az}</h3>
+                              <h3 className='h3 text-[16px] text-[--textsky] uppercase '>{ml(cur?.name_az,cur?.name_ru,cur?.name_en)}</h3>
                             </div>
                           </div>
                         </NavLink>

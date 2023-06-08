@@ -10,6 +10,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
+
 const ProductionSub = ({ data }) => {
   const [t] = useTranslation("translation");
   const pagebanner = data?.options?.pagetopbanner;
@@ -49,7 +50,7 @@ const ProductionSub = ({ data }) => {
                   {
                     currentItem && currentItem?.map((cur, i) => (
                       <Tab key={i} _selected={{ color: 'white', bg: 'blue.500' }} >
-                        <h2 className=' pt-[5px] pb-[5px] pl-[20px] pr-[20px] '>{cur?.name_az}</h2>
+                        <h2 className=' pt-[5px] pb-[5px] pl-[20px] pr-[20px] '>{ml(cur?.name_az,cur?.name_ru,cur?.name_en)}</h2>
                       </Tab>
                     ))
                   }

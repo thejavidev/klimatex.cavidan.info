@@ -1,8 +1,8 @@
 {
-    "xidmeth2":"Klimat & Texnologiya",
-    "xidmeth3":"Xidmətlər",
-    "projects":"layihələrimiz",
-    "loadmore":"daha çox",
+    "xidmeth2":"Климат и технологии",
+    "xidmeth3":"Услуги",
+    "projects":"наши проекты",
+    "loadmore":"более",
     "home":"Домашняя Страница",
     "about":"О Нас",
     "service":"Услуги",
@@ -18,5 +18,18 @@
     "huquq":"ВСЕ ПРАВА ЗАЩИЩЕНЫ ©",
     "swal1":"Отлично",
     "swal2":"Ваше сообщение успешно отправлено.",
-    "sending":"Отправляются"
+    "sending":"Отправляются",
+    "material":"материал",
+    "color":"цвет",
+    "usage":"Применение",
+    "features":"функции",
+    "send":"Отправлять",
+    "colling":"Системы",
+    "systems":"вентиляции",
+    "namesurname":"Имя,Фамилия",
+    "email":"Э-почта",
+    "phone":"Телефон",
+    "messages":"Сообщение",
+    "swal1":"Отлично",
+    "swal2":"Ваше сообщение было отправлено успешно."
 }

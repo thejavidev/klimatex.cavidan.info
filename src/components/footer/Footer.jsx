@@ -47,21 +47,21 @@ const Footer = ({data}) => {
                   <div className="flex items-center">
                     <LocalPhoneIcon sx={{ fontSize: 30 }} className='text-[#fff]' />
                     <div className="flex flex-col ml-2">
-                      <a className='text-[#fff]' href={`tel:${api[0]?.tel1}`}>{api[0]?.tel1}</a>
-                      <a className='text-[#fff]' href={`tel:${api[0]?.tel2}`}>{api[0]?.tel2}</a>
+                      <a className='text-[#fff] text-[14px]' href={`tel:${api[0]?.tel1}`}>{api[0]?.tel1}</a>
+                      <a className='text-[#fff] text-[14px]' href={`tel:${api[0]?.tel2}`}>{api[0]?.tel2}</a>
                     </div>
                   </div>
                 </Col>
                 <Col xl={3} lg={4}  md={12} className='md:mb-4'>
                   <div className="flex items-center">
                     <AddLocationIcon sx={{ fontSize: 30 }} className='text-[#fff] mr-2' />
-                    <span className='text-[#fff]'>{ml(api[0]?.map_az, api[0]?.map_ru, api[0]?.map_en)}</span>
+                    <span className='text-[#fff] text-[14px]'>{ml(api[0]?.map_az, api[0]?.map_ru, api[0]?.map_en)}</span>
                   </div>
                 </Col>
                 <Col xl={3} lg={4}  md={12}>
                   <div className="flex items-center">
                     <EmailIcon sx={{ fontSize: 30 }} className='text-[#fff] mr-2' />
-                    <a className='text-[#fff]' href={`mailto:${api[0]?.mail}`}>{api[0]?.mail}</a>
+                    <a className='text-[#fff] text-[14px]' href={`mailto:${api[0]?.mail}`}>{api[0]?.mail}</a>
                   </div>
                 </Col>
               </Row>

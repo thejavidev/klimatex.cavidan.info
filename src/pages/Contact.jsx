@@ -90,7 +90,7 @@ const Contact = ({ data }) => {
                       value={form.name} required
                       onChange={handleChange}
                       name='name'
-                      placeholder='Ad,soyad' className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
+                      placeholder={t("namesurname")} className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
                   <Col lg={4} className='lg:mb-[20px] lg:p-0'>
@@ -99,7 +99,7 @@ const Contact = ({ data }) => {
                        value={form.email} required
                        onChange={handleChange}
                        name='email'
-                      placeholder='E-mail' className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
+                      placeholder={t("email")} className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
                   <Col lg={4} className='lg:p-0'>
@@ -108,12 +108,12 @@ const Contact = ({ data }) => {
                        value={form.phone} required
                        onChange={handleChange}
                        name='phone'
-                      placeholder='Nömrə' className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
+                      placeholder={t("phone")} className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
                   <Col lg={12} className='lg:p-0'>
                     <div className='mt-[40px]'>
-                      <textarea placeholder='Mesaj'
+                      <textarea placeholder={t("messages")}
                        value={form.message} required
                        name="message"
                        onChange={handleChange}

@@ -60,7 +60,7 @@ const Projects = ({ data }) => {
                     <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                       <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
                       <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
-                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{cur?.name_az}</h2>
+                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az,cur?.name_ru,cur?.name_en)}</h2>
                     </Link>
                   </Col>
                 ))
