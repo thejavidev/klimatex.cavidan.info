@@ -189,8 +189,8 @@ const Header = ({data}) => {
                 </div>
                 {
                   menu && menu?.map((cur, i) => (
-                    <li key={i} className='pt-[10px] pb-[10px] pl-0 pr-0 ml-[20px] lg:ml-[10px]'>
-                      <NavLink onClick={CloseMenu} to={cur?.path} className='text-[--text] capitalize relative text-[14px] lg:text-[#fff]'>
+                    <li key={i} className='pt-[10px] pb-[10px] pl-0 pr-0 ml-[20px] lg:ml-[10px] navbarli'>
+                      <NavLink onClick={CloseMenu} to={cur?.path} className='navbarT text-[--text] capitalize relative text-[14px] lg:text-[#fff]'>
                         {cur?.name}
                       </NavLink>
                     </li>
