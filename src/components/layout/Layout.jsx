@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Helmet  } from 'react-helmet-async';
 
+
 const Layout = ({ children,data }) => {
   const [t] = useTranslation("translation");
   const sitelang =localStorage.getItem("i18nextLng");
@@ -15,6 +16,7 @@ const Layout = ({ children,data }) => {
         <title >KLİMATEX -{t("home")}</title>
       </Helmet>
       <Header data={data} />
+      
         <AnimatePresence >
           {children}
         </AnimatePresence>

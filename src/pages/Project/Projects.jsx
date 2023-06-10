@@ -36,20 +36,20 @@ const Projects = ({ data }) => {
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]  ' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px]  lg:text-[25px] font-[200] capitalize transfrom70'>{t("project")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[#fff] text-[40px]  lg:text-[25px] font-[200] capitalize transfrom70'>{t("project")}</h2>
           </div>
         </div>
 
-        <section id='4' className='pt-[60px] min-h-[100vh] lg:min-h-[50vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
+        <section id='4' className='pt-[60px] bg-[--bgef] min-h-[100vh] lg:min-h-[50vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
           <Container fluid>
             <Row className='m-0 p-0' data-aos="fade-up" data-aos-duration="2000">
-              <Col lg={4} md={6} xs={6} className="bg-[--textsky] flex items-center justify-center flex-col relative cursor-default">
+              <Col lg={4} md={6} xs={6} className="bg-[--bgsky] flex items-center justify-center flex-col relative cursor-default">
                 <div className="">
-                  <h3 className='text-[--textfff] capitalize text-[30px] lg:text-[20px]'>{t("projects")}</h3>
+                  <h3 className='text-[#fff] capitalize text-[30px] lg:text-[20px]'>{t("projects")}</h3>
                 </div>
                 <div className="">
                   {next < projects?.length && (
-                    <button onClick={handleMoreImage} className='mt-[20px] bg-[--textfff] text-[--textsky] capitalize
+                    <button onClick={handleMoreImage} className='mt-[20px] bg-[--textfff] text-[--text] capitalize
                     pl-[20px] pr-[20px] pt-[10px] pb-[10px] md:pl-[5px] md:pr-[5px] md:pt-[5px] md:pb-[5px] md:text-[13px] rounded-[4px] font-[500]'>{t("loadmore")}</button>
                   )}
                 </div>
@@ -60,7 +60,7 @@ const Projects = ({ data }) => {
                     <Link to={`/project/${cur?.slug_az}`} className='cursor-pointer tansitionall relative grayscale1'>
                       <LazyLoadImage className=' grayscale-[100%] hover:grayscale-0' src={cur?.cover} />
                       <h2 className='h2 absolute top-[0] left-[50%] w-full p-[20px] text-center transform50
-                     text-[--textfff] text-[25px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az,cur?.name_ru,cur?.name_en)}</h2>
+                     text-[#fff] text-[25px] opacity-[0] capitalize tansitionall' >{ml(cur?.name_az,cur?.name_ru,cur?.name_en)}</h2>
                     </Link>
                   </Col>
                 ))

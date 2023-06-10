@@ -37,7 +37,7 @@ const Blog = ({ data }) => {
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px]  font-[200] capitalize transfrom70'>{t("blog")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[#fff] text-[40px] lg:text-[25px]  font-[200] capitalize transfrom70'>{t("blog")}</h2>
           </div>
         </div>
         <section id="1">
@@ -50,15 +50,15 @@ const Blog = ({ data }) => {
                       <Col lg={6} >
                         <div className="flex justify-center flex-col h-full pr-[50px] lg:pr-[0]">
                           <div className="blog md:pt-[20px]">
-                            <div  dangerouslySetInnerHTML={{ __html: cur?.title_az && ml(cur?.title_az, cur?.title_ru, cur?.title_en) }}>
+                            <div className='text-[--text]' dangerouslySetInnerHTML={{ __html: cur?.title_az && ml(cur?.title_az, cur?.title_ru, cur?.title_en) }}>
                             </div>
                           </div>
                           <div className="pt-[30px] pb-[30px]">
-                            <div className='line-clamp-3 text-justify' dangerouslySetInnerHTML={{ __html: cur?.text_az && ml(cur?.text_az, cur?.text_ru, cur?.text_en) }}></div>
+                            <div className='line-clamp-3 text-justify text-[--text]' dangerouslySetInnerHTML={{ __html: cur?.text_az && ml(cur?.text_az, cur?.text_ru, cur?.text_en) }}></div>
                           </div>
                           <div className="">
                             <Link to={`${cur?.slug_az}`}>
-                              <Button className='pt-[10px] capitalize font-[500] pb-[10px] pl-[40px] pr-[40px] border-none bg-[--textfff] text-[--text]'>
+                              <Button className='pt-[10px] capitalize font-[500] pb-[10px] pl-[40px] pr-[40px] border-none bg-[--bgsky] text-[--text]'>
                                 {t("loadmore")}
                               </Button>
                             </Link>

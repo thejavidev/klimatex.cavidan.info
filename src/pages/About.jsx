@@ -48,13 +48,13 @@ const About = ({ data }) => {
       >
         <Breadcump data={data}
         />
-        <section id="1" className=' bg-[--textfff] '>
+        <section id="1" className=' bg-[--slider27] '>
           <Container fluid>
             <div className="pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] lg:mt-5">
               <Row  >
                 <Col lg={6} className="flex justify-center flex-col" data-aos="fade-right" data-aos-duration="2000">
                   <h2 className='font-[700] text-[40px] lg:text-[25px] text-[--text] mb-[30px] capitalize'>{t("about")}</h2>
-                  <div className='columns-2 flex flex-col gap-[40px] text-justify' dangerouslySetInnerHTML={{ __html: about && ml(about?.about_1_text_az, about?.about_1_text_ru, about?.about_1_text_en) }}></div>
+                  <div className='columns-2 flex flex-col gap-[40px] text-justify text-[--text]' dangerouslySetInnerHTML={{ __html: about && ml(about?.about_1_text_az, about?.about_1_text_ru, about?.about_1_text_en) }}></div>
 
                 </Col>
                 <Col lg={6} data-aos="fade-left" data-aos-duration="2000">
@@ -94,7 +94,7 @@ const About = ({ data }) => {
           </Container>
         </section>
 
-        <div id="3" className='mt-[10px] pb-[50px] bg-[--textfff]'>
+        <div id="3" className='pb-[50px] bg-[--slider27]'>
           <Container fluid>
             <div className="pl-[50px] pr-[50px] pt-[40px] lg:pl-[20px] lg:pr-[20px] ">
               <h2 className='font-[700] text-[40px] lg:text-[25px]  text-[--text]  mb-[30px] capitalize' ata-aos="fade-right"
@@ -123,11 +123,11 @@ const About = ({ data }) => {
             <div className="pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px]">
               <Row>
                 <Col lg={7} className='p-[20px] lg:p-[0] lg:mb-[30px] flex justify-center flex-col' data-aos="fade-right" data-aos-duration="2000">
-                  <h2 className='text-[40px] lg:text-[25px] font-[700] capitalize mb-[20px]'>{t("production")}</h2>
-                  <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_2_text_az, about?.about_2_text_ru, about?.about_2_text_en) }}></div>
+                  <h2 className='text-[40px] lg:text-[25px] font-[700] capitalize mb-[20px] text-[--text]'>{t("production")}</h2>
+                  <div className="text-[--text]" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_2_text_az, about?.about_2_text_ru, about?.about_2_text_en) }}></div>
                 </Col>
                 <Col lg={5} className='p-[20px] lg:p-[0]'>
-                  <div className="flex border-2 items-center justify-center z-20 relative xl:image" data-aos="zoom-in-up"
+                  <div className="flex border-2 items-center justify-center z-20 relative image" data-aos="zoom-in-up"
                     data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_2_img} className='h-[400px] md:h-full w-full ' />
                   </div>
@@ -136,19 +136,19 @@ const About = ({ data }) => {
             </div>
           </Container>
         </section>
-        <section id="5" className=' bg-[--textfff]  '>
+        <section id="5" className=' bg-[--slider27]'>
           <Container fluid>
             <div className="pl-[50px] pr-[50px]  lg:pl-[20px] lg:pr-[20px]">
               <Row className='pt-[50px] pb-[50px]'>
                 <Col lg={5} className='p-0 m-0 '>
-                  <div className="flex  items-center justify-center z-20 relative xl:image" data-aos="zoom-in-up"
+                  <div className="flex  items-center justify-center z-20 relative image" data-aos="zoom-in-up"
                     data-aos-anchor-placement="top-center" data-aos-duration="2000">
                     <LazyLoadImage src={about?.about_3_img} className='h-[400px] md:h-full w-full ' />
                   </div>
                 </Col>
                 <Col lg={7} className=' flex justify-center flex-col pl-[40px] lg:pl-[0] lg:mt-4' data-aos="fade-left" data-aos-duration="2000">
-                  <h2 className='text-[40px] lg:text-[25px] font-[700] capitalize '>{t("servis")}</h2>
-                  <div className="" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_3_text_az, about?.about_3_text_ru, about?.about_3_text_en) }}></div>
+                  <h2 className='text-[40px] lg:text-[25px] font-[700] capitalize text-[--text]'>{t("servis")}</h2>
+                  <div className="text-[--text]" dangerouslySetInnerHTML={{ __html: about && ml(about?.about_3_text_az, about?.about_3_text_ru, about?.about_3_text_en) }}></div>
                 </Col>
               </Row>
             </div>

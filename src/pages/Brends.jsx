@@ -17,7 +17,7 @@ const Brends = ({brend}) => {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className='bg-[--textfff] shadow-auto p-[10px] rounded-[0.625em] mySwiper'
+            className='bg-[--brend] shadow-auto p-[10px] rounded-[0.625em] mySwiper'
             breakpoints={{
               40: {
                 slidesPerView: 2,

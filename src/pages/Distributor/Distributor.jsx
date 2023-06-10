@@ -35,7 +35,7 @@ const Distributor = ({ data }) => {
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("distribution")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[#fff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("distribution")}</h2>
           </div>
         </div>
         <section id="1" className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] md:pb-[10px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
@@ -45,7 +45,7 @@ const Distributor = ({ data }) => {
                 distribution && distribution?.map((cur, i) => (
                   <Col key={i} lg={2} md={3} xs={6} className='mb-[20px]'>
                     <NavLink
-                      className='distribution w-full bg-[--textfff] flex h-full justify-center items-center pt-[20px] pb-[20px]'
+                      className='distribution w-full bg-[#fff] flex h-full justify-center items-center pt-[20px] pb-[20px]'
                       to={`/distributor/${cur?.id}`} >
                       <LazyLoadImage className='w-auto h-[30px] md:h-[15px]' src={cur?.src} />
                     </NavLink>
@@ -55,7 +55,7 @@ const Distributor = ({ data }) => {
               <div className='mt-[30px]'>
                 {
                   subcategories && subcategories?.slice(0,1)?.map((cur, i) => (
-                    <Link className='bg-[--textfff] pt-[10px] pb-[10px] pl-[20px] pr-[20px]' to={`${cur?.distribusiya_one_id}`} key={i}> {ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</Link>
+                    <Link className='bg-[#fff] pt-[10px] pb-[10px] pl-[20px] pr-[20px]' to={`${cur?.distribusiya_one_id}`} key={i}> {ml(cur?.name_az, cur?.name_ru, cur?.name_en)}</Link>
                   ))
                 }
               </div>

@@ -76,7 +76,7 @@ const Contact = ({ data }) => {
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("contact")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[#fff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("contact")}</h2>
           </div>
         </div>
         <section id='1' className='pt-[60px] bg-[--bgef] min-h-[55vh] pb-[60px] pl-[50px] pr-[50px] lg:pl-[20px] lg:pr-[20px] relative'>
@@ -90,7 +90,7 @@ const Contact = ({ data }) => {
                       value={form.name} required
                       onChange={handleChange}
                       name='name'
-                      placeholder={t("namesurname")} className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
+                      placeholder={t("namesurname")} className='w-full bg-[--slider27] text-[--text] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
                   <Col lg={4} className='lg:mb-[20px] lg:p-0'>
@@ -99,7 +99,7 @@ const Contact = ({ data }) => {
                        value={form.email} required
                        onChange={handleChange}
                        name='email'
-                      placeholder={t("email")} className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
+                      placeholder={t("email")} className='w-full bg-[--slider27] text-[--text] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
                   <Col lg={4} className='lg:p-0'>
@@ -108,7 +108,7 @@ const Contact = ({ data }) => {
                        value={form.phone} required
                        onChange={handleChange}
                        name='phone'
-                      placeholder={t("phone")} className='w-full bg-[--textfff] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
+                      placeholder={t("phone")} className='w-full bg-[--slider27] text-[--text] outline-none shadow-none border-none caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px]' />
                     </div>
                   </Col>
                   <Col lg={12} className='lg:p-0'>
@@ -117,12 +117,12 @@ const Contact = ({ data }) => {
                        value={form.message} required
                        name="message"
                        onChange={handleChange}
-                      className='w-full outline-none shadow-none border-none resize-none h-[300px] caret-[#ff0000] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px] '></textarea>
+                      className='w-full outline-none shadow-none border-none text-[--text] resize-none h-[300px] caret-[#ff0000] bg-[--slider27] pt-[15px] pb-[15px] pl-[20px] pr-[20px] text-[18px] '></textarea>
                     </div>
                   </Col>
                   <Col lg={12}>
                     <div className='flex items-center justify-center mt-[30px] '>
-                      <button className='bg-[--textfff]  w-max pl-[40px] pr-[40px] pt-[10px] pb-[10px]'>  {loading ? <Spiner /> : (t('send'))}</button>
+                      <button className='bg-[--bgsky] text-[--text]  w-max pl-[40px] pr-[40px] pt-[10px] pb-[10px]'>  {loading ? <Spiner /> : (t('send'))}</button>
                     </div>
                   </Col>
                 </Row>

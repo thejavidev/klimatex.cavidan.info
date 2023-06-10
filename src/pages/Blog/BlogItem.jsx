@@ -32,7 +32,7 @@ const BlogItem = ({ data }) => {
         <div className="relative w-full breadcump">
           <LazyLoadImage src={pagebanner} className='w-full h-[395px] lg:h-[230px]' />
           <div className="" >
-            <h2 className='absolute top-[65%] left-[50%] z-5 text-[--textfff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("blog")}</h2>
+            <h2 className='absolute top-[65%] left-[50%] z-5 text-[#fff] text-[40px] lg:text-[25px] font-[200] capitalize transfrom70'>{t("blog")}</h2>
           </div>
         </div>
         <section id="1">
@@ -42,11 +42,11 @@ const BlogItem = ({ data }) => {
             </Col>
             <Col lg={12} className='flex flex-col justify-center h-full'>
               <div className="blog">
-                <div dangerouslySetInnerHTML={{ __html: currentPost?.title_az && ml(currentPost?.title_az, currentPost?.title_ru, currentPost?.title_en) }}>
+                <div className='text-[--text]'  dangerouslySetInnerHTML={{ __html: currentPost?.title_az && ml(currentPost?.title_az, currentPost?.title_ru, currentPost?.title_en) }}>
                 </div>
               </div>
               <div className="pt-[30px] pb-[30px]">
-                <div className=' text-justify' dangerouslySetInnerHTML={{ __html: currentPost?.text_az && ml(currentPost?.text_az, currentPost?.text_ru, currentPost?.text_en) }}></div>
+                <div className=' text-justify text-[--text]' dangerouslySetInnerHTML={{ __html: currentPost?.text_az && ml(currentPost?.text_az, currentPost?.text_ru, currentPost?.text_en) }}></div>
               </div>
             </Col>
           </Container>

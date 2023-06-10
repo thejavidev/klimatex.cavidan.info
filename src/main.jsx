@@ -12,10 +12,10 @@ import { ChakraProvider } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css';
 import 'aos/dist/aos.css';
-import { RecoilRoot } from 'recoil';
+import configeStore from './components/store/configureStore.js'
+import { Provider } from 'react-redux';
 
-
-
+const store = configeStore();
 const defaultLanguage = ["az"]
 i18next.use(LanguageDetector, initReactI18next,).init({
   resources,
@@ -33,9 +33,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <LightgalleryProvider>
           <ChakraProvider>
             <HelmetProvider>
-              <RecoilRoot>
+              <Provider store={store}>
                 <App />
-              </RecoilRoot>
+              </Provider>
             </HelmetProvider>
           </ChakraProvider>
         </LightgalleryProvider>
