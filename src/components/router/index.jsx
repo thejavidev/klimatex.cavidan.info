@@ -12,8 +12,7 @@ import Blog from "../../pages/Blog/Blog"
 import BlogItem from "../../pages/Blog/BlogItem"
 import Contact from "../../pages/Contact"
 import DistributorSingle from "../../pages/Distributor/DistributorSingle"
-// import DistributorItem from "../../pages/DistributorItem"
-// import DistributorSingle from "../../pages/DistributorSingle"
+
 
 
 

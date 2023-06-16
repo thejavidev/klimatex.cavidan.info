@@ -19,17 +19,16 @@ function App() {
   AOS.init({ once: true, });
   useEffect(()=>{
     setLoading(true)
+    window.scrollTo(0, 0);
+    dispatch(loadposts())
     setTimeout(() => {
       setLoading(false)
     }, 3500);
-  },[])
+
+  },[dispatch])
 
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(loadposts())
-    console.clear();
-  }, [dispatch]);
+ 
 
 
   return (
